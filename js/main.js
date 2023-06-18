@@ -28,7 +28,7 @@ gsap.fromTo(['.landingSpan', '.txtarea'],
   y: 0,
   //duration: 0.2,
   ease: 'none',
-  delay: 0.5,
+  delay: 0.2,
   stagger: 2
 })
 
@@ -72,8 +72,8 @@ cardBox.forEach((cards) =>
       scrollTrigger:
       {
         trigger: cards.querySelector('.cardDisc'),
-        start: 'top bottom-=250',
-        end: 'top center',
+        start: 'top bottom-=350',
+        end: 'top center+=100',
         toggleActions: 'play none none reverse',
         //markers: true
       }

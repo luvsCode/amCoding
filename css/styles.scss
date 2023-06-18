@@ -152,8 +152,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-       // text-align: center;
-        //border: 2px solid green;
+       //text-align: center;
+        border: 5px solid red;
 
         .landingSpan{
             font-size: 6.5rem;
@@ -166,12 +166,13 @@
             height: 60%;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             text-align: center;
             align-items: center;
             font-family: 'Spectral', sans-serif;
             //position: absolute;
             //z-index: 20;
-            //border: 2px solid red;
+            border: 2px solid lightgreen;
 
             h1{
                 font-size: 6.5rem;
@@ -194,10 +195,11 @@
 
     .abtBox1{
         width: 100%;
-        height: 25%;
+        height: 50%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         
         h1{
             font-size: 5rem;
@@ -207,7 +209,7 @@
 
     .abtBox2{
         width: 100%;
-        height: 75%;
+        height: 50%;
         display: flex;
         align-items: center;
 
@@ -290,53 +292,62 @@
         align-items: center;
         flex-direction: column;
         //flex-wrap: wrap;
-        //border: 2px solid red;
+        border: 5px solid teal;
+        height: 100%;
         width: 100%;
 
         .cards{
             width: 100%;
-            height: 250px;
+            height: 70%;
             display: flex;
-            //justify-content: center;
+            //flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
             color: #212838;
             background: #eceef4;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
            // backdrop-filter: blur(7.5px);
            // -webkit-backdrop-filter: blur(7.5px);
-            border: 1px solid rgba(236, 238, 244, 0.3);     
+            //border: 1px solid rgba(236, 238, 244, 0.3);     
                    //border: 2px solid orange;
             //border-radius: 0.8rem;
-            &:hover{
-                border: 2px solid rgba(91, 120, 199, 0.3);
-            }
+        
 
             .cardPic{
-                width: 40%;
-                height: 100%;
+                width: 100%;
+                height: 50%;
                 //border: 2px solid lightcoral;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
             .cardDisc{
-                width: 60%;
-                height: 100%;
+                width: 100%;
+                height: 50%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                margin: 2%;
                 //border: 2px solid lightseagreen;
-                align-items: center;
-                text-align: center;
+                //align-items: center;
+                text-align: start;
 
                 h2{
                     font-family: "Spectral", sans-serif;
                     font-size: 3rem;
+                    
                 }
 
                 p{
-                    text-align: center;
+                    //text-align: left;
                     font-size: 2rem;
+                    width: 70%;
                     line-height: 2;
                     font-family: 'Poppins', sans-serif;
-                    margin: 2%;
+                    //margin: 2%;
                     //padding-bottom: 5%;
                 }
 
@@ -466,9 +477,6 @@
     }    
 
     .landingContainer{
-        h1{
-            color: red;
-        }
 
         .landing{
             //border: 2px solid green;
@@ -477,7 +485,7 @@
     
             .txtarea{
                 width: 80%;
-                height: 80%;
+                height: 55%;
                 h1{
                     font-size: 4rem;
 
