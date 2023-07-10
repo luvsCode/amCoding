@@ -15,13 +15,19 @@
 
 .navContainer{
     //border: 1px solid green;
-    //display: none;
+
     width: 100vw;
     height: 15vh;
-    background: #eceef4;
     position: fixed;
+    z-index: 90;
+    background: rgba(236, 238, 244, 0.9);
+
+//box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
     //display: flex;
     //justify-content: center;
+    //border: 2px solid red;
 
     .naviLinks{
         display: flex;
@@ -40,7 +46,7 @@
         position: absolute;
         text-align: center;
         list-style: none;
-        z-index: 999;
+        //z-index: 999;
         //display: none;
         opacity: 1;
         clip-path: circle(600px at 300% 50%);
@@ -153,7 +159,7 @@
         justify-content: center;
         align-items: center;
        //text-align: center;
-        border: 5px solid red;
+        //border: 5px solid red;
 
         .landingSpan{
             font-size: 6.5rem;
@@ -172,7 +178,7 @@
             font-family: 'Spectral', sans-serif;
             //position: absolute;
             //z-index: 20;
-            border: 2px solid lightgreen;
+            //border: 2px solid lightgreen;
 
             h1{
                 font-size: 6.5rem;
@@ -290,15 +296,15 @@
         //justify-content: space-evenly;
         gap: 4rem;
         align-items: center;
-        flex-direction: column;
+        //flex-direction: column;
         //flex-wrap: wrap;
-        border: 5px solid teal;
+        //border: 5px solid teal;
         height: 100%;
         width: 100%;
 
         .cards{
-            width: 100%;
-            height: 70%;
+            width: 40%;
+            height: 40%;
             display: flex;
             //flex-direction: column-reverse;
             justify-content: center;
@@ -316,18 +322,24 @@
             .cardPic{
                 width: 100%;
                 height: 50%;
+                //display: block;
                 //border: 2px solid lightcoral;
 
                 img{
                     width: 100%;
                     height: 100%;
                 }
+
+                //&:hover{
+                //    display: none;
+                //}
             }
 
             .cardDisc{
                 width: 100%;
                 height: 50%;
                 display: flex;
+                //display: none;
                 flex-direction: column;
                 justify-content: center;
                 margin: 2%;
@@ -335,16 +347,20 @@
                 //align-items: center;
                 text-align: start;
 
+                //&:hover{
+                //    display: block;
+                //}
+
                 h2{
                     font-family: "Spectral", sans-serif;
                     font-size: 3rem;
                     
                 }
-
+//
                 p{
                     //text-align: left;
                     font-size: 2rem;
-                    width: 70%;
+                    width: 60%;
                     line-height: 2;
                     font-family: 'Poppins', sans-serif;
                     //margin: 2%;
@@ -368,6 +384,8 @@
                         color: #eceef4;
                     }
                 }
+
+          
             }
 
         }
@@ -380,16 +398,29 @@
 
 .contactContainer{
     width: 100vw;
-    height: 40vh;
-    //border: 2px solid red;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    
+    //border: 2px solid greenyellow;
     background: #eceef4;
 
-    .txtBox{
-        width: 100%;
+    .svgContainer2{
+        //border: 2px solid red;
+        width: 40%;
         height: 100%;
-        //border: 1px solid violet;
         display: flex;
-        align-items: center;
+        justify-content: center;
+       
+    }
+    .txtBox{
+        width: 60%;
+        height: 100%;
+        //margin: 2%;
+        //border: 2px solid violet;
+        display: flex;
+        text-align: center;
+        //align-items: center;
         justify-content: center;
         flex-direction: column;
 
@@ -403,6 +434,8 @@
         p{
             font-family: 'Poppins', sans-serif;
             font-size: 2rem;
+            margin: 3%;
+            margin-right: 5rem;
 
         }
     }
@@ -509,7 +542,7 @@
             p{
 
                 font-size: 1.6rem;
-                margin: 2%;
+                margin: 4%;
             }        
         }
     }

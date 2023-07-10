@@ -18,36 +18,57 @@
   }
 })
  */
-gsap.fromTo(['.landingSpan', '.txtarea'],
+
+let landingAni = gsap.timeline();
+
+landingAni.fromTo('.landingSpan',
 {
   opacity: 0,
-  y:-20
+  //y:-20
 },
 {
   opacity: 1,
-  y: 0,
-  //duration: 0.2,
-  ease: 'none',
-  delay: 0.2,
-  stagger: 2
+  duration: 1,
+  ease: "bounce.out"
 })
 
-gsap.to('.landingSpan',
+landingAni.fromTo('.txtarea',
+{
+    opacity: 0
+},
+{
+    opacity: 1,
+    ease: 'none',
+    duration: 1
+})
+
+landingAni.fromTo('.navContainer',
+{
+    opacity: 0
+},
+{
+    delay: 0.5,
+    opacity: 1,
+    ease: 'power4.out',
+    duration: 3
+})
+
+landingAni.to('.landingSpan',
 {
   color:'#5b78c7',
   scrollTrigger:
   {
     trigger: '.txtarea',
     start: 'top top+=100',
-    end: 'bottom+=300 center',
+    end: 'bottom+=250 center',
     //opacity: 0,
     pin: true,
     scrub: true,
-    //markers: true
+    markers: true
   }
 })
 
-gsap.to('.txtarea h1',
+landingAni.to('.txtarea h1',
 {
   opacity: 0,
   scrollTrigger:
@@ -61,6 +82,72 @@ gsap.to('.txtarea h1',
   }
 })
 
+gsap.fromTo('.abtBox2',
+{
+    opacity: 0
+},
+{
+    opacity: 1,
+    duration: 1,
+    scrollTrigger:
+    {
+        trigger: '.svgContainer',
+        start: 'top top+=100',
+        end: 'bottom center',
+        scrub: 2,
+        //markers: true
+    }
+})
+
+gsap.fromTo('.projectTxt',
+{
+    opacity: 0
+},
+{
+    opacity: 1,
+    //duration: 2,
+    scrollTrigger:
+    {
+        trigger: '.abtBox2',
+        start: 'top top+=50',
+        end: 'bottom center',
+        scrub: 2,
+        //markers: true
+    }
+})
+
+gsap.fromTo('.mainTools',
+{
+    x: -200
+},
+{
+    x: 0,
+    scrollTrigger:
+    {
+        trigger: '.abtBox2',
+        start: 'top top+=40',
+        end: 'bottom+=100 center',
+        scrub: 2,
+        //markers: true
+    }
+})
+
+gsap.fromTo('.supTools',
+{
+    x: +200
+},
+{
+    x: 0,
+    scrollTrigger:
+    {
+        trigger: '.abtBox2',
+        start: 'top top+=40',
+        end: 'bottom+=100 center',
+        scrub: 2,
+        //markers: true
+    }
+})
+
 const cardBox = document.querySelectorAll('.cards');
 
 cardBox.forEach((cards) =>
@@ -72,8 +159,8 @@ cardBox.forEach((cards) =>
       scrollTrigger:
       {
         trigger: cards.querySelector('.cardDisc'),
-        start: 'top bottom-=350',
-        end: 'top center+=100',
+        start: 'top bottom-=250',
+        end: 'bottom bottom',
         toggleActions: 'play none none reverse',
         //markers: true
       }
