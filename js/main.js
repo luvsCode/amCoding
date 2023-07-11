@@ -18,7 +18,7 @@
   }
 })
  */
-
+const mainBody = document.querySelector('body');
 let landingAni = gsap.timeline();
 
 landingAni.fromTo('.landingSpan',
@@ -64,7 +64,7 @@ landingAni.to('.landingSpan',
     //opacity: 0,
     pin: true,
     scrub: true,
-    markers: true
+    //markers: true
   }
 })
 
@@ -148,7 +148,29 @@ gsap.fromTo('.supTools',
     }
 })
 
-const cardBox = document.querySelectorAll('.cards');
+gsap.fromTo('.cards',
+{
+  x: +700,
+  //opacity: 0,
+},
+{
+  x: 0,
+  //opacity: 1,
+  ease: 'none',
+  scrollTrigger:
+  {
+    pin: '.projectContainer',
+    trigger: '.projectContainer',
+    start: 'top top',
+    scrub: 1,
+    markers: true,
+
+  }
+
+})
+
+/**
+ * const cardBox = document.querySelectorAll('.cards');
 
 cardBox.forEach((cards) =>
 {
@@ -166,6 +188,7 @@ cardBox.forEach((cards) =>
       }
     })
 })
+ */
 
 
 
@@ -221,6 +244,8 @@ const landingLink = document.querySelector('.landingLink');
 const aboutLink = document.querySelector('.aboutLink');
 const projectLink = document.querySelector('.projectLink');
 const contactLink = document.querySelector('.contactLink');
+
+let menuTl = gsap.timeline({paused: true});
 
 
 

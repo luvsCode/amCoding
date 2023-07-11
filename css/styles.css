@@ -169,7 +169,7 @@
 .projectContainer {
   background: #eceef4;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,6 +198,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
 }
 .projectContainer .devTools .mainTools .svgPack, .projectContainer .devTools .supTools .svgPack {
   display: flex;
@@ -221,9 +222,10 @@
   width: 100%;
 }
 .projectContainer .projectCards .cards {
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 70%;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   color: #212838;
@@ -232,7 +234,7 @@
 }
 .projectContainer .projectCards .cards .cardPic {
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 .projectContainer .projectCards .cards .cardPic img {
   width: 100%;
@@ -242,6 +244,7 @@
   width: 100%;
   height: 50%;
   display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   margin: 2%;
