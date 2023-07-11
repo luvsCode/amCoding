@@ -13,8 +13,11 @@
 .navContainer {
   width: 100vw;
   height: 15vh;
-  background: #eceef4;
   position: fixed;
+  z-index: 90;
+  background: rgba(236, 238, 244, 0.9);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .navContainer .naviLinks {
   display: flex;
@@ -30,7 +33,6 @@
   position: absolute;
   text-align: center;
   list-style: none;
-  z-index: 999;
   opacity: 1;
   clip-path: circle(600px at 300% 50%);
   -webkit-clip-path: circle(600px at 300% 50%);
@@ -119,6 +121,7 @@
   height: 60%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   align-items: center;
   font-family: "Spectral", sans-serif;
@@ -138,10 +141,11 @@
 }
 .aboutContainer .abtBox1 {
   width: 100%;
-  height: 25%;
+  height: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 .aboutContainer .abtBox1 h1 {
   font-size: 5rem;
@@ -149,7 +153,7 @@
 }
 .aboutContainer .abtBox2 {
   width: 100%;
-  height: 75%;
+  height: 50%;
   display: flex;
   align-items: center;
 }
@@ -165,7 +169,7 @@
 .projectContainer {
   background: #eceef4;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,6 +198,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
 }
 .projectContainer .devTools .mainTools .svgPack, .projectContainer .devTools .supTools .svgPack {
   display: flex;
@@ -213,44 +218,47 @@
   display: flex;
   gap: 4rem;
   align-items: center;
-  flex-direction: column;
+  height: 100%;
   width: 100%;
 }
 .projectContainer .projectCards .cards {
-  width: 100%;
-  height: 250px;
+  width: 50%;
+  height: 70%;
   display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
   color: #212838;
   background: #eceef4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(236, 238, 244, 0.3);
-}
-.projectContainer .projectCards .cards:hover {
-  border: 2px solid rgba(91, 120, 199, 0.3);
 }
 .projectContainer .projectCards .cards .cardPic {
-  width: 40%;
+  width: 100%;
+  height: 100%;
+}
+.projectContainer .projectCards .cards .cardPic img {
+  width: 100%;
   height: 100%;
 }
 .projectContainer .projectCards .cards .cardDisc {
-  width: 60%;
-  height: 100%;
+  width: 100%;
+  height: 50%;
   display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin: 2%;
+  text-align: start;
 }
 .projectContainer .projectCards .cards .cardDisc h2 {
   font-family: "Spectral", sans-serif;
   font-size: 3rem;
 }
 .projectContainer .projectCards .cards .cardDisc p {
-  text-align: center;
   font-size: 2rem;
+  width: 60%;
   line-height: 2;
   font-family: "Poppins", sans-serif;
-  margin: 2%;
 }
 .projectContainer .projectCards .cards .cardDisc .projBtn {
   font-family: "Spectral", sans-serif;
@@ -272,14 +280,22 @@
 
 .contactContainer {
   width: 100vw;
-  height: 40vh;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
   background: #eceef4;
 }
-.contactContainer .txtBox {
-  width: 100%;
+.contactContainer .svgContainer2 {
+  width: 40%;
   height: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+.contactContainer .txtBox {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -292,6 +308,8 @@
 .contactContainer .txtBox p {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
+  margin: 3%;
+  margin-right: 5rem;
 }
 
 .footContainer {
@@ -341,16 +359,13 @@
   .navContainer .naviLinks.openNav .navLi.fade {
     transition: all 0.4s ease 0.2s;
   }
-  .landingContainer h1 {
-    color: red;
-  }
   .landingContainer .landing {
     width: 100%;
     height: 100%;
   }
   .landingContainer .landing .txtarea {
     width: 80%;
-    height: 80%;
+    height: 55%;
   }
   .landingContainer .landing .txtarea h1 {
     font-size: 4rem;
@@ -363,7 +378,7 @@
   }
   .aboutContainer .abtBox2 p {
     font-size: 1.6rem;
-    margin: 2%;
+    margin: 4%;
   }
   .projectContainer .projectTxt h1 {
     font-size: 2.5rem;
