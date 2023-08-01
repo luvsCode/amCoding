@@ -94,7 +94,7 @@ gsap.fromTo('.abtBox2',
         trigger: '.svgContainer',
         start: 'top top+=100',
         end: 'bottom center',
-        scrub: 2,
+        scrub: 1.5,
         //markers: true
     }
 })
@@ -111,50 +111,103 @@ gsap.fromTo('.projectTxt',
         trigger: '.abtBox2',
         start: 'top top+=50',
         end: 'bottom center',
-        scrub: 2,
+        scrub: 1,
         //markers: true
     }
 })
 
 gsap.fromTo('.mainTools',
 {
-    x: -200
+    //x: -200,
+    //overflow: 'hidden',
+    opacity: 0,
 },
 {
-    x: 0,
+    //x: 0,
+    opacity: 1,
     scrollTrigger:
     {
         trigger: '.abtBox2',
         start: 'top top+=40',
         end: 'bottom+=100 center',
-        scrub: 2,
+        scrub: 1,
         //markers: true
     }
 })
 
 gsap.fromTo('.supTools',
 {
-    x: +200
+    //x: +200,
+    //overflow: 'hidden',
+    opacity: 0,
 },
 {
-    x: 0,
+    //x: 0,
+    opacity: 1,
     scrollTrigger:
     {
         trigger: '.abtBox2',
         start: 'top top+=40',
         end: 'bottom+=100 center',
-        scrub: 2,
+        scrub: 1,
         //markers: true
     }
 })
 
-gsap.fromTo('.cards',
+gsap.set(".photo:not(:first-child)", {opacity:0, scale:0.5})
+
+const animation = gsap.to(".photo:not(:first-child)", {
+	opacity:1, scale:1, duration:1, stagger:1
+})
+
+ScrollTrigger.create({
+	trigger:".projectCards",
+	start:"top top",
+	end:"bottom bottom",
+	pin:".right",
+	animation: animation,
+	scrub:true,
+    snap: 0.5,
+	markers:true
+})
+
+
+/**
+ * const cards = gsap.utils.toArray('.cards');
+const cardAmount = cards.length;
+
+gsap.fromTo(cards,
+  {
+    yPercent: +(50 * (cardAmount +1)),
+    //opacity: 0,
+  }, {
+    //opacity: 1,
+  ease: 'none',
+  duration: cards.length,
+  yPercent: -(100 * (cardAmount -1)),
+  scrollTrigger: {
+    trigger: '.projectContainer',
+    start: 'center center',
+    end: '+=' + 50 * cardAmount + '%',
+    scrub: true,
+    pin: '.projectContainer',
+    //snap: 1 / (cardAmount - 1),
+    markers: true
+  }
+})
+
+ */
+ 
+/**\
+ * 
+ *  gsap.fromTo('.cards',
 {
-  x: +700,
-  //opacity: 0,
+  y: +200,
+  //overflow: 'hidden',
+  //opacity: 0.5,
 },
 {
-  x: 0,
+  y: 0,
   //opacity: 1,
   ease: 'none',
   scrollTrigger:
@@ -163,32 +216,42 @@ gsap.fromTo('.cards',
     trigger: '.projectContainer',
     start: 'top top',
     scrub: 1,
-    markers: true,
+    //stagger: 1,
+    //markers: true,
 
   }
 
-})
-
-/**
+}) 
+ * 
+ * 
  * const cardBox = document.querySelectorAll('.cards');
 
 cardBox.forEach((cards) =>
 {
-  gsap.from(cards,
+  gsap.fromTo(cards,
     {
-      opacity: 0,
-      //yPercent: 3,
+      //opacity: 1,
+      y: 0,
+    },
+    { 
+      //opacity:0,
+      y:-200, 
+      ease: 'none',
       scrollTrigger:
       {
-        trigger: cards.querySelector('.cardDisc'),
-        start: 'top bottom-=250',
-        end: 'bottom bottom',
+    pin: '.projectCards',
+    trigger: '.projectCards',
+        start: 'top top',
+        scrub: 1,
+        //end: 'bottom bottom',
         toggleActions: 'play none none reverse',
-        //markers: true
+        markers: true
       }
     })
 })
  */
+ 
+
 
 
 
@@ -244,10 +307,6 @@ const landingLink = document.querySelector('.landingLink');
 const aboutLink = document.querySelector('.aboutLink');
 const projectLink = document.querySelector('.projectLink');
 const contactLink = document.querySelector('.contactLink');
-
-let menuTl = gsap.timeline({paused: true});
-
-
 
 toggleButton.addEventListener("click", () => {
   naviLinks.classList.toggle("openNav");

@@ -33,9 +33,9 @@
   position: absolute;
   text-align: center;
   list-style: none;
-  opacity: 1;
-  clip-path: circle(600px at 300% 50%);
-  -webkit-clip-path: circle(600px at 300% 50%);
+  opacity: 0;
+  clip-path: circle(200px at 140% -5%);
+  -webkit-clip-path: circle(200px at 140% -5%);
   transition: all 0.5s ease-out;
 }
 .navContainer .naviLinks .navLi {
@@ -58,14 +58,14 @@
 }
 .navContainer .naviLinks.openNav {
   opacity: 1;
-  clip-path: circle(2000px at 80% 50%);
-  -webkit-clip-path: circle(2000px at 80% 50%);
+  clip-path: circle(2000px at 20% 10%);
+  -webkit-clip-path: circle(2000px at 20% 10%);
   pointer-events: all;
 }
 .navContainer .naviLinks.closeNav {
   clip-path: circle(100px at 90% -20%);
   -webkit-clip-path: circle(100px at 90% -20%);
-  transition: all 0.5s ease-in;
+  transition: all 0.8s ease-in;
   pointer-events: none;
 }
 .navContainer nav {
@@ -179,7 +179,7 @@
 }
 .projectContainer .projectTxt h1 {
   padding: 2rem;
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Spectral", sans-serif;
   text-align: center;
 }
@@ -198,7 +198,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .projectContainer .devTools .mainTools .svgPack, .projectContainer .devTools .supTools .svgPack {
   display: flex;
@@ -214,68 +214,58 @@
 .projectContainer .devTools .mainTools .svgPack .toolsBundle p, .projectContainer .devTools .supTools .svgPack .toolsBundle p {
   font-size: 2rem;
 }
-.projectContainer .projectCards {
+
+.projectCardSection {
   display: flex;
-  gap: 4rem;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
-.projectContainer .projectCards .cards {
+.projectCardSection .left {
   width: 50%;
-  height: 70%;
+}
+.projectCardSection .left .detailsWrapper {
+  margin: auto;
+  width: 80%;
+}
+.projectCardSection .left .detailsWrapper .cards {
+  height: 100vh;
   display: flex;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  color: #212838;
-  background: #eceef4;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.projectContainer .projectCards .cards .cardPic {
-  width: 100%;
-  height: 100%;
-}
-.projectContainer .projectCards .cards .cardPic img {
-  width: 100%;
-  height: 100%;
-}
-.projectContainer .projectCards .cards .cardDisc {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  display: none;
   flex-direction: column;
   justify-content: center;
-  margin: 2%;
+  padding: 2rem;
   text-align: start;
 }
-.projectContainer .projectCards .cards .cardDisc h2 {
-  font-family: "Spectral", sans-serif;
+.projectCardSection .left .detailsWrapper .cards h2 {
   font-size: 3rem;
+  font-family: "Spectral", sans-serif;
+  color: #5b78c7;
 }
-.projectContainer .projectCards .cards .cardDisc p {
+.projectCardSection .left .detailsWrapper .cards p {
   font-size: 2rem;
-  width: 60%;
   line-height: 2;
   font-family: "Poppins", sans-serif;
 }
-.projectContainer .projectCards .cards .cardDisc .projBtn {
-  font-family: "Spectral", sans-serif;
-  font-size: 1rem;
-  width: 100px;
-  height: 40px;
-  background: rgba(236, 238, 244, 0.34);
-  border-radius: 8px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.projectCardSection .right {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.projectContainer .projectCards .cards .cardDisc .projBtn:hover {
-  background: rgba(91, 120, 199, 0.93);
-  color: #eceef4;
+.projectCardSection .right .photos {
+  width: 40vw;
+  height: 40vw;
+  position: relative;
 }
-.projectContainer .projectCards .flipIt {
-  flex-direction: row-reverse;
+.projectCardSection .right .photos .photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.projectCardSection .right .photos .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 }
 
 .contactContainer {
