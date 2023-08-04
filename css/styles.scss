@@ -517,12 +517,13 @@ body {
 
   .mainSection {
     width: 100vw;
+    height: 70vh;
 
     .txtArea {
-      width: 80%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
       .webdevTxt {
-        font-size: 3.5rem;
+        font-size: 4rem;
       }
 
       .mainP {
