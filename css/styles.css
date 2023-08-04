@@ -1,420 +1,700 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 62.5%;
-  -ms-overflow-style: none; /*  IE & Edge  */
-  scrollbar-width: none; /*  firefox  */
+  -ms-overflow-style: none;
+  /*  IE & Edge  */
+  scrollbar-width: none;
+  /*  firefox  */
 }
+
 * ::-webkit-scrollbar {
   display: none;
 }
 
-.navContainer {
-  width: 100vw;
+body {
+  cursor: none;
+}
+
+#circularcursor {
+  background: #5b78c7;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.headerSection {
+  width: 100%;
   height: 15vh;
   position: fixed;
-  z-index: 90;
-  background: rgba(236, 238, 244, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-}
-.navContainer .naviLinks {
-  display: flex;
-  flex-direction: column;
-  background: rgb(91, 120, 199);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(91, 120, 199, 0.3);
-  width: 50%;
-  right: 0;
-  height: 100vh;
-  position: absolute;
-  text-align: center;
-  list-style: none;
   opacity: 1;
-  clip-path: circle(600px at 300% 50%);
-  -webkit-clip-path: circle(600px at 300% 50%);
+}
+
+.headerSection .naviLinks {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 999;
+  width: 50%;
+  height: 100vh;
+  right: 0;
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style: none;
+  background: #5b78c7;
+  opacity: 0;
+  clip-path: circle(200px at 140% -5%);
+  -webkit-clip-path: circle(200px at 140% -5%);
+  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-.navContainer .naviLinks .navLi {
+
+.headerSection .naviLinks .navLi {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.navContainer .naviLinks .navLi a {
+
+.headerSection .naviLinks .navLi a {
   cursor: pointer;
-  font-size: 3rem;
-  font-family: "Spectral", sans-serif;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   text-decoration: none;
   color: #eceef4;
 }
-.navContainer .naviLinks .navLi a:hover {
+
+.headerSection .naviLinks .navLi a:hover {
   font-size: 4rem;
   font-weight: 800;
 }
-.navContainer .naviLinks.openNav {
+
+.headerSection .naviLinks.openNav {
   opacity: 1;
-  clip-path: circle(2000px at 80% 50%);
-  -webkit-clip-path: circle(2000px at 80% 50%);
+  clip-path: circle(2000px at 20% 10%);
+  -webkit-clip-path: circle(2000px at 20% 10%);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   pointer-events: all;
 }
-.navContainer .naviLinks.closeNav {
+
+.headerSection .naviLinks.closeNav {
   clip-path: circle(100px at 90% -20%);
   -webkit-clip-path: circle(100px at 90% -20%);
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
   pointer-events: none;
 }
-.navContainer nav {
+
+.headerSection .navSection {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.navContainer nav ul {
+
+.headerSection .navSection ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
-  font-size: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  list-style: none;
 }
-.navContainer nav ul .logo {
+
+.headerSection .navSection ul .logo {
   font-size: 2.5rem;
   padding: 3rem;
-  font-family: "Spectral", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
-.navContainer nav ul .navToggle {
+
+.headerSection .navSection ul .navToggle {
   margin-left: auto;
   padding: 3rem;
   z-index: 999;
 }
-.navContainer nav ul .navToggle .toggleSvg {
+
+.headerSection .navSection ul .navToggle .toggleSvg {
   cursor: pointer;
 }
-.navContainer nav ul li {
-  list-style: none;
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  background: #5b78c7;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+  position: fixed;
 }
 
-.landingContainer {
-  pointer-events: none;
-  background: #eceef4;
-  width: 100vw;
-  height: 100vh;
+.intro .introH1 {
+  color: #fff;
+  font-size: 10rem;
+  font-family: "Open Sans", Sans-serif;
+  opacity: 0;
 }
-.landingContainer .landing {
+
+.mainSection {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.landingContainer .landing .landingSpan {
-  font-size: 6.5rem;
-  font-weight: 600;
-  pointer-events: all;
-}
-.landingContainer .landing .txtarea {
+
+.mainSection .txtArea {
+  background: #fff;
   width: 60%;
   height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
-  align-items: center;
-  font-family: "Spectral", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-.landingContainer .landing .txtarea h1 {
-  font-size: 6.5rem;
+
+.mainSection .txtArea .webdevTxt {
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.mainSection .txtArea .mainP {
+  font-size: 6rem;
   font-weight: 300;
   line-height: 1.2;
 }
 
-.aboutContainer {
-  width: 100vw;
-  height: 100vh;
-  background: #eceef4;
+.aboutSection {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fff;
 }
-.aboutContainer .abtBox1 {
+
+.aboutSection .box1 {
   width: 100%;
   height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.aboutContainer .abtBox1 h1 {
-  font-size: 5rem;
-  font-family: "Spectral", sans-serif;
+
+.aboutSection .box1 .aboutH1 {
+  font-size: 6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #5b78c7;
 }
-.aboutContainer .abtBox2 {
+
+.aboutSection .box2 {
   width: 100%;
-  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
 }
-.aboutContainer .abtBox2 p {
+
+.aboutSection .box2 .aboutP {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
-  margin: 8%;
+  margin: 5%;
   padding-bottom: 5%;
 }
 
-.projectContainer {
-  background: #eceef4;
+.projectSection {
+  background: #fff;
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.projectContainer .projectTxt {
+
+.projectSection .projectTxt {
   width: 100%;
 }
-.projectContainer .projectTxt h1 {
+
+.projectSection .projectTxt .projectH1 {
   padding: 2rem;
-  font-size: 3rem;
-  font-family: "Spectral", sans-serif;
+  font-size: 5rem;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
+  color: #5b78c7;
 }
-.projectContainer .devTools {
+
+.projectSection .devTools {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2.5rem;
 }
-.projectContainer .devTools .mainTools, .projectContainer .devTools .supTools {
+
+.projectSection .devTools .mainTools,
+.projectSection .devTools .supTools {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.projectContainer .devTools .mainTools .svgPack, .projectContainer .devTools .supTools .svgPack {
+
+.projectSection .devTools .mainTools .svgPack,
+.projectSection .devTools .supTools .svgPack {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.projectContainer .devTools .mainTools .svgPack .toolsBundle, .projectContainer .devTools .supTools .svgPack .toolsBundle {
+
+.projectSection .devTools .mainTools .svgPack .toolsBundle,
+.projectSection .devTools .supTools .svgPack .toolsBundle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 1.5rem;
   font-family: "Poppins", sans-serif;
 }
-.projectContainer .devTools .mainTools .svgPack .toolsBundle p, .projectContainer .devTools .supTools .svgPack .toolsBundle p {
+
+.projectSection .devTools .mainTools .svgPack .toolsBundle p,
+.projectSection .devTools .supTools .svgPack .toolsBundle p {
   font-size: 2rem;
 }
-.projectContainer .projectCards {
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-.projectContainer .projectCards .cards {
-  width: 50%;
-  height: 70%;
-  display: flex;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  color: #212838;
-  background: #eceef4;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.projectContainer .projectCards .cards .cardPic {
-  width: 100%;
-  height: 100%;
-}
-.projectContainer .projectCards .cards .cardPic img {
-  width: 100%;
-  height: 100%;
-}
-.projectContainer .projectCards .cards .cardDisc {
+
+.projectTxt2 {
   width: 100%;
   height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  margin: 2%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projectTxt2 p {
+  font-family: "Poppins", sans-serif;
+  margin: 5%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.projectCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.projectCards .left {
+  width: 50%;
+}
+
+.projectCards .left .detailsWrapper {
+  margin: auto;
+  width: 80%;
+}
+
+.projectCards .left .detailsWrapper .cards {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
   text-align: start;
 }
-.projectContainer .projectCards .cards .cardDisc h2 {
-  font-family: "Spectral", sans-serif;
+
+.projectCards .left .detailsWrapper .cards h1 {
   font-size: 3rem;
+  font-family: "Open Sans", sans-serif;
+  color: #5b78c7;
 }
-.projectContainer .projectCards .cards .cardDisc p {
-  font-size: 2rem;
-  width: 60%;
+
+.projectCards .left .detailsWrapper .cards p {
+  font-size: 2.5rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
+  margin-right: 5%;
 }
-.projectContainer .projectCards .cards .cardDisc .projBtn {
-  font-family: "Spectral", sans-serif;
-  font-size: 1rem;
-  width: 100px;
-  height: 40px;
-  background: rgba(236, 238, 244, 0.34);
-  border-radius: 8px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
+.projectCards .right {
+  width: 50%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.projectContainer .projectCards .cards .cardDisc .projBtn:hover {
-  background: rgba(91, 120, 199, 0.93);
-  color: #eceef4;
+
+.projectCards .right .photos {
+  width: 40vw;
+  height: 40vw;
+  background: #5b78c7;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 1rem;
+  z-index: 20;
 }
-.projectContainer .projectCards .flipIt {
-  flex-direction: row-reverse;
+
+.projectCards .right .photos .photo {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+}
+
+.projectCards .right .photos .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 }
 
 .contactContainer {
-  width: 100vw;
-  height: 65vh;
+  width: 100%;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  background: #eceef4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #fff;
 }
-.contactContainer .svgContainer2 {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
+
 .contactContainer .txtBox {
   width: 60%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .contactContainer .txtBox h1 {
-  font-family: "Spectral", sans-serif;
-  font-size: 3rem;
+  font-family: "Open Sans", sans-serif;
+  color: #5b78c7;
+  font-size: 6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
+
 .contactContainer .txtBox p {
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  margin: 3%;
-  margin-right: 5rem;
+  font-size: 2.5rem;
+  margin: 5%;
 }
 
 .footContainer {
-  width: 100vw;
-  height: 20vh;
+  width: 100%;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #5b78c7;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
-.footContainer ul {
+
+.footContainer .footBox1 {
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.footContainer ul li {
+
+.footContainer .footBox1 h1 {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 5rem;
+  margin: 5%;
+}
+
+.footContainer .footBox1 p {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.footContainer .footBox2 {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footContainer .footBox2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.footContainer .footBox2 ul .liTitle {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.footContainer .footBox2 ul li {
   list-style: none;
-  padding: 0.5rem;
-}
-.footContainer ul .socials:hover, .footContainer ul a:hover {
-  fill: #d40f0f;
-}
-.footContainer .footCopy {
-  font-family: "Spectral", sans-serif;
-  font-size: 3rem;
-  font-weight: 600;
-}
-.footContainer .footCopy a {
-  text-decoration: none;
-  color: #eceef4;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
-  .navContainer .naviLinks {
+  .headerSection {
+    width: 100vw;
+  }
+  .headerSection .naviLinks {
     width: 100%;
-    clip-path: circle(50px at 90% -10%);
-    -webkit-clip-path: circle(50px at 90% -10%);
-    transition: all 0.5s ease-out;
   }
-  .navContainer .naviLinks.openNav {
-    opacity: 1;
-    clip-path: circle(1100px at 90% -10%);
-    -webkit-clip-path: circle(1100px at 90% -10%);
-    pointer-events: all;
+  .intro {
+    width: 100vw;
   }
-  .navContainer .naviLinks.openNav .navLi.fade {
-    transition: all 0.4s ease 0.2s;
+  .intro .introH1 {
+    font-size: 8rem;
   }
-  .landingContainer .landing {
-    width: 100%;
-    height: 100%;
+  .mainSection {
+    width: 100vw;
   }
-  .landingContainer .landing .txtarea {
+  .mainSection .txtArea {
     width: 80%;
-    height: 55%;
+    height: 80%;
   }
-  .landingContainer .landing .txtarea h1 {
-    font-size: 4rem;
-  }
-  .landingContainer .landing .txtarea span {
-    font-size: 4rem;
-  }
-  .aboutContainer .abtBox1 h1 {
+  .mainSection .txtArea .webdevTxt {
     font-size: 3.5rem;
   }
-  .aboutContainer .abtBox2 p {
-    font-size: 1.6rem;
-    margin: 4%;
+  .mainSection .txtArea .mainP {
+    font-size: 3.5rem;
   }
-  .projectContainer .projectTxt h1 {
-    font-size: 2.5rem;
+  .aboutSection .box1 .aboutH1 {
+    text-align: center;
   }
-  .projectContainer .devTools {
-    flex-direction: column;
+  .aboutSection .box2 .aboutP {
+    margin: 5%;
+    font-size: 2rem;
   }
-  .projectContainer .devTools .mainTools, .projectContainer .devTools .supTools {
-    flex-direction: column;
+  .projectSection {
+    height: 100vh;
   }
-  .projectContainer .devTools .mainTools .svgPack, .projectContainer .devTools .supTools .svgPack {
-    flex-direction: column;
-  }
-  .projectContainer .devTools .mainTools .svgPack .toolsBundle, .projectContainer .devTools .supTools .svgPack .toolsBundle {
-    flex-direction: column;
-  }
-  .projectContainer .devTools .mainTools .svgPack .toolsBundle p, .projectContainer .devTools .supTools .svgPack .toolsBundle p {
-    font-size: 1rem;
-  }
-  .projectContainer .projectCards {
+  .projectSection .devTools {
     height: 100%;
   }
-  .projectContainer .projectCards .cards {
-    flex-direction: column;
-    height: 500px;
+  .projectSection .devTools .mainTools,
+  .projectSection .devTools .supTools {
+    width: 50%;
+    height: 100%;
   }
-  .projectContainer .projectCards .cards .cardPic {
+  .projectSection .devTools .mainTools .svgPack,
+  .projectSection .devTools .supTools .svgPack {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projectSection .projectTxt2 {
+    width: 100vw;
+    height: 40%;
+  }
+  .projectCardSection {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red;
+  }
+  .projectCardSection .projectCards {
+    display: none;
+  }
+  .contactContainer {
+    width: 100vw;
+  }
+  .contactContainer .txtBox {
     width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
-  .projectContainer .projectCards .cards .cardDisc {
-    width: 100%;
+  .footContainer {
+    width: 100vw;
+    height: 50vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
-  .projectContainer .projectCards .cards .cardDisc h2 {
-    font-size: 2.5rem;
+  .footContainer .footBox1 h1 {
+    font-size: 4rem;
   }
-  .projectContainer .projectCards .cards .cardDisc p {
-    font-size: 1.6rem;
+  .footContainer .footBox2 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */
