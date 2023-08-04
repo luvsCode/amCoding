@@ -517,21 +517,26 @@ body {
 
   .mainSection {
     width: 100vw;
+    height: 80vh;
+    border: 2px solid blue;
 
     .txtArea {
-      width: 80%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
+      border: 2px solid green;
       .webdevTxt {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
       }
 
       .mainP {
-        font-size: 3.5rem;
+        font-size: 3rem;
       }
     }
   }
 
   .aboutSection {
+    width: 100vw;
+    height: 100vh;
     .box1 {
       .aboutH1 {
         text-align: center;
