@@ -186,7 +186,7 @@ body {
     .webdevTxt {
       //if gsap scroll doesnt work then span outside of txtarea
       font-size: 6rem;
-      font-weight: 600;
+      //font-weight: 600;
     }
 
     .mainP {
@@ -501,6 +501,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  #circularcursor {
+    display: none;
+  }
   .headerSection {
     width: 100vw;
     .naviLinks {
@@ -510,6 +513,7 @@ body {
 
   .intro {
     width: 100vw;
+    height: 100vh;
     .introH1 {
       font-size: 8rem;
     }
@@ -517,17 +521,22 @@ body {
 
   .mainSection {
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
+    border: 2px solid #5b78c7;
 
     .txtArea {
       width: 100%;
       height: 100%;
+      padding: 3rem;
+      //line-height: 2;
+      //border: 2px solid red;
       .webdevTxt {
-        font-size: 4rem;
+        font-size: 5rem;
       }
 
       .mainP {
-        font-size: 3.5rem;
+        font-size: 3rem;
+        line-height: 2;
       }
     }
   }
@@ -541,8 +550,8 @@ body {
 
     .box2 {
       .aboutP {
-        margin: 5%;
-        font-size: 2rem;
+        padding: 3rem;
+        font-size: 2.5rem;
       }
     }
   }
@@ -564,21 +573,76 @@ body {
         }
       }
     }
+  }
 
-    .projectTxt2 {
-      width: 100vw;
-      height: 40%;
-    }
+  .projectTxt2 {
+    width: 100vw;
+    height: 40%;
+    padding: 2.5rem;
+    background: #5b78c7;
+    color: #fff;
+    //border: 2px solid red;
   }
 
   .projectCardSection {
     width: 100vw;
     height: 100vh;
     //display: none;
-    border: 2px solid red;
+    //border: 2px solid red;
+    display: none;
 
     .projectCards {
       display: none;
+    }
+  }
+
+  .projectCardMobile {
+    width: 100vw;
+    height: 100%;
+    //border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #5b78c7;
+
+    .mobileCards {
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      //border: 2px solid orange;
+      background: #fff;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      border-radius: 3rem;
+
+      img {
+        width: 100%;
+        height: 50%;
+      }
+
+      .mCardTxt {
+        width: 100%;
+        height: 50%;
+        line-height: 2;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        //border: 2px solid lightblue;
+        padding: 2rem;
+
+        h1 {
+          font-size: 3rem;
+          font-family: "Open Sans", sans-serif;
+          color: #5b78c7;
+        }
+
+        p {
+          font-size: 2rem;
+          font-family: "Poppins", sans-serif;
+        }
+      }
     }
   }
 
@@ -588,6 +652,7 @@ body {
     .txtBox {
       width: 100%;
       justify-content: space-evenly;
+      padding: 3rem;
     }
   }
 
@@ -595,7 +660,7 @@ body {
     width: 100vw;
     height: 50vh;
     flex-direction: column;
-    justify-content: space-evenly;
+    //justify-content: ;
 
     .footBox1 {
       h1 {

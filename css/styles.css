@@ -217,7 +217,6 @@ body {
 
 .mainSection .txtArea .webdevTxt {
   font-size: 6rem;
-  font-weight: 600;
 }
 
 .mainSection .txtArea .mainP {
@@ -606,6 +605,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  #circularcursor {
+    display: none;
+  }
   .headerSection {
     width: 100vw;
   }
@@ -614,30 +616,34 @@ body {
   }
   .intro {
     width: 100vw;
+    height: 100vh;
   }
   .intro .introH1 {
     font-size: 8rem;
   }
   .mainSection {
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
+    border: 2px solid #5b78c7;
   }
   .mainSection .txtArea {
     width: 100%;
     height: 100%;
+    padding: 3rem;
   }
   .mainSection .txtArea .webdevTxt {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   .mainSection .txtArea .mainP {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    line-height: 2;
   }
   .aboutSection .box1 .aboutH1 {
     text-align: center;
   }
   .aboutSection .box2 .aboutP {
-    margin: 5%;
-    font-size: 2rem;
+    padding: 3rem;
+    font-size: 2.5rem;
   }
   .projectSection {
     height: 100vh;
@@ -657,17 +663,77 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .projectSection .projectTxt2 {
+  .projectTxt2 {
     width: 100vw;
     height: 40%;
+    padding: 2.5rem;
+    background: #5b78c7;
+    color: #fff;
   }
   .projectCardSection {
     width: 100vw;
     height: 100vh;
-    border: 2px solid red;
+    display: none;
   }
   .projectCardSection .projectCards {
     display: none;
+  }
+  .projectCardMobile {
+    width: 100vw;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #5b78c7;
+  }
+  .projectCardMobile .mobileCards {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background: #fff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 3rem;
+  }
+  .projectCardMobile .mobileCards img {
+    width: 100%;
+    height: 50%;
+  }
+  .projectCardMobile .mobileCards .mCardTxt {
+    width: 100%;
+    height: 50%;
+    line-height: 2;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem;
+  }
+  .projectCardMobile .mobileCards .mCardTxt h1 {
+    font-size: 3rem;
+    font-family: "Open Sans", sans-serif;
+    color: #5b78c7;
+  }
+  .projectCardMobile .mobileCards .mCardTxt p {
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
   }
   .contactContainer {
     width: 100vw;
@@ -677,6 +743,7 @@ body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    padding: 3rem;
   }
   .footContainer {
     width: 100vw;
@@ -685,9 +752,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
   }
   .footContainer .footBox1 h1 {
     font-size: 4rem;
