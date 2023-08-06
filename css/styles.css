@@ -624,7 +624,6 @@ body {
   .mainSection {
     width: 100vw;
     height: 100vh;
-    border: 2px solid #5b78c7;
   }
   .mainSection .txtArea {
     width: 100%;
