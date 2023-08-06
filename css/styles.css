@@ -632,9 +632,10 @@ body {
   }
   .mainSection .txtArea .webdevTxt {
     font-size: 5rem;
+    font-weight: 600;
   }
   .mainSection .txtArea .mainP {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 2;
   }
   .aboutSection .box1 .aboutH1 {
@@ -648,7 +649,8 @@ body {
     height: 100vh;
   }
   .projectSection .devTools {
-    height: 100%;
+    height: 80%;
+    border: 2px solid red;
   }
   .projectSection .devTools .mainTools,
   .projectSection .devTools .supTools {
@@ -700,8 +702,7 @@ body {
     height: 100%;
     padding: 2rem;
     background: #fff;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 10rem;
     border-radius: 3rem;
   }
   .projectCardMobile .mobileCards img {
