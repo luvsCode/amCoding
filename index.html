@@ -93,16 +93,16 @@
       <h1 class="introH1">A | M</h1>
     </span>
 
-    <main class="mainSection">
+    <main class="mainSection" id="landingLink">
       <div class="txtArea">
         <span class="webdevTxt"> Web Developer </span>
         <p class="mainP">
-          creating intuitive modern and responsive web applications
+          specialized in crafting aesthetically pleasing and functional websites
         </p>
       </div>
     </main>
 
-    <section class="aboutSection">
+    <section class="aboutSection" id="aboutLink">
       <div class="box1">
         <svg
           class="profilePic"
@@ -238,12 +238,11 @@
       </div>
       <div class="box2">
         <p class="aboutP">
-          A freelance developer based in Toronto specializing in crafting
-          aesthetically pleasing and functional websites. I strive to create
-          experiences that are engaging, accessible, and user-centric with
-          human-readable code. What excites me the most about being a Frontend
-          Developer is having the ability to connect entrepreneurs to their
-          clients with an optimized website.
+          A freelance developer based in Toronto striving to create experiences
+          that are engaging, accessible, and user-centric. The combination of my
+          passion for design, code & minimalism gives me the freedom to build
+          fresh and optimized websites and microsites for companies and
+          individuals.
         </p>
       </div>
     </section>
@@ -459,8 +458,9 @@
 
     <div class="projectTxt2">
       <p>
-        I know how to build a site that looks great and get you the traffic you
-        need to make your business successful. Check out the projects below.
+        I usually work in vanilla javascript without frameworks building
+        scalable websites from scratch. With each project, I push my work to new
+        horizons, always putting quality first.
       </p>
     </div>
 
@@ -529,11 +529,22 @@
           <p>aasdsd</p>
         </div>
       </div>
+
+      <div class="mobileCards">
+        <img src="./assets/cmash2.jpg" alt="colour smash picture" />
+        <div class="mCardTxt">
+          <h1>Colour Smash</h1>
+          <p>
+            Test your luck and choose one of three colours and see which will
+            reign on top
+          </p>
+        </div>
+      </div>
     </div>
 
     <section class="contactContainer section" id="contactLink">
       <div class="txtBox">
-        <h1>Let's build something!</h1>
+        <h1>Let's work together</h1>
         <p>
           Feel free to reach out if you're looking for a developer, have a
           question, or just want to connect.
@@ -549,19 +560,51 @@
         <div class="fbox2a">
           <ul class="footMenu">
             <li class="liTitle">Menu</li>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contacts</li>
+            <li>
+              <a class="landingLink" href="#landingLink" aria-label="home link">
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="aboutLink" href="#aboutLink" aria-label="about link">
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                class="projectLink"
+                href="#projectLink"
+                aria-label="project link"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                class="contactLink"
+                href="#contactLink"
+                aria-label="contact link"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
         <div class="fbox2b">
           <ul class="footSocial">
             <li class="liTitle">Social</li>
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>linkedIn</li>
-            <li>Github</li>
+            <li>
+              <a href="#aboutLink" aria-label="Github link"> Github </a>
+            </li>
+            <li>
+              <a href="#aboutLink" aria-label="linkedIn link"> linkedIn </a>
+            </li>
+            <li>
+              <a href="#aboutLink" aria-label="Twitter link"> Twitter </a>
+            </li>
+            <li>
+              <a href="#aboutLink" aria-label="Instagram link"> Instagram </a>
+            </li>
           </ul>
         </div>
       </div>
