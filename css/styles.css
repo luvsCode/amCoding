@@ -10,12 +10,8 @@
   display: none;
 }
 
-body {
-  cursor: none;
-}
-
 #circularcursor {
-  background: #5b78c7;
+  background: #04773b;
   border: 1px solid black;
   height: 30px;
   width: 30px;
@@ -49,7 +45,7 @@ body {
   text-align: center;
   justify-content: space-evenly;
   list-style: none;
-  background: rgb(91, 120, 199);
+  background: #151515;
   opacity: 0;
   clip-path: circle(200px at 140% -5%);
   -webkit-clip-path: circle(200px at 140% -5%);
@@ -61,6 +57,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.headerSection .naviLinks .navLi:hover {
+  background: #5b78c7;
+}
 .headerSection .naviLinks .navLi a {
   cursor: pointer;
   font-size: 2.5rem;
@@ -70,8 +69,8 @@ body {
   color: #eceef4;
 }
 .headerSection .naviLinks .navLi a:hover {
-  font-size: 4rem;
-  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: #fff;
 }
 .headerSection .naviLinks.openNav {
   opacity: 1;
@@ -79,12 +78,6 @@ body {
   -webkit-clip-path: circle(2000px at 20% 10%);
   transition: all 0.5s ease-out;
   pointer-events: all;
-}
-.headerSection .naviLinks.closeNav {
-  clip-path: circle(100px at 90% -20%);
-  -webkit-clip-path: circle(100px at 90% -20%);
-  transition: all 0.8s ease-in;
-  pointer-events: none;
 }
 .headerSection .navSection {
   width: 100%;
@@ -100,23 +93,33 @@ body {
 }
 .headerSection .navSection ul .logo {
   font-size: 2.5rem;
-  padding: 3rem;
+  padding: 5rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
 .headerSection .navSection ul .navToggle {
   margin-left: auto;
-  padding: 3rem;
+  padding: 5rem;
   z-index: 999;
 }
-.headerSection .navSection ul .navToggle .toggleSvg {
+.headerSection .navSection ul .navToggle .toggleSvgOpen,
+.headerSection .navSection ul .navToggle .toggleSvgClose {
   cursor: pointer;
+}
+.headerSection .navSection ul .navToggle .toggleSvgOpen.svgOpen {
+  display: none;
+}
+.headerSection .navSection ul .navToggle .toggleSvgClose {
+  display: none;
+}
+.headerSection .navSection ul .navToggle .toggleSvgClose.closeSvg {
+  display: block;
 }
 
 .intro {
   width: 100%;
   height: 100vh;
-  background: #5b78c7;
+  background: #151515;
   z-index: 99;
   display: flex;
   justify-content: center;
@@ -126,9 +129,10 @@ body {
 }
 .intro .introH1 {
   color: #fff;
-  font-size: 10rem;
+  font-size: 15rem;
   font-family: "Open Sans", Sans-serif;
   opacity: 0;
+  text-align: center;
 }
 
 .mainSection {
@@ -175,9 +179,10 @@ body {
   align-items: center;
 }
 .aboutSection .box1 .aboutH1 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-family: "Open Sans", sans-serif;
   color: #1c1d20;
+  padding: 1rem;
 }
 .aboutSection .box2 {
   width: 100%;
@@ -188,26 +193,26 @@ body {
   font-size: 2.5rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
-  padding: 10rem;
+  padding: 8rem;
 }
 
 .projectSection {
   background: #fff;
   width: 100vw;
-  height: 60vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .projectSection .projectTxt {
   width: 100%;
+  height: auto;
 }
 .projectSection .projectTxt .projectH1 {
   padding: 2rem;
   font-size: 5rem;
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: #1c1d20;
 }
 .projectSection .devTools {
   width: 100%;
@@ -215,14 +220,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2.5rem;
 }
 .projectSection .devTools .mainTools,
 .projectSection .devTools .supTools {
   width: 50%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -245,12 +248,12 @@ body {
 }
 
 .projectTxt2 {
-  width: 100%;
-  height: 50%;
+  width: 100vw;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rem;
+  padding: 8rem;
 }
 .projectTxt2 p {
   font-family: "Poppins", sans-serif;
@@ -281,7 +284,7 @@ body {
 .projectCards .left .detailsWrapper .cards h1 {
   font-size: 3rem;
   font-family: "Open Sans", sans-serif;
-  color: #5b78c7;
+  color: #151515;
 }
 .projectCards .left .detailsWrapper .cards p {
   font-size: 2.5rem;
@@ -299,7 +302,6 @@ body {
 .projectCards .right .photos {
   width: 40vw;
   height: 40vw;
-  background: #5b78c7;
   position: relative;
   display: flex;
   align-items: center;
@@ -340,7 +342,6 @@ body {
 }
 .contactContainer .txtBox h1 {
   font-family: "Open Sans", sans-serif;
-  color: #1c1d20;
   font-size: 6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
@@ -355,8 +356,7 @@ body {
   height: 40vh;
   display: flex;
   align-items: center;
-  background: #5b78c7;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: #151515;
 }
 .footContainer .footBox1 {
   width: 40%;
@@ -365,12 +365,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .footContainer .footBox1 h1 {
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  font-size: 5rem;
-  margin: 5%;
+  font-size: 4rem;
 }
 .footContainer .footBox1 p {
   color: #fff;
@@ -392,7 +392,7 @@ body {
   text-align: center;
 }
 .footContainer .footBox2 ul .liTitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-decoration: underline;
 }
 .footContainer .footBox2 ul li {
@@ -402,6 +402,11 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 2rem;
+}
+.footContainer .footBox2 ul li a:hover {
+  color: #5b78c7;
+  text-decoration: underline;
+  text-decoration-color: #fff;
 }
 
 @media screen and (max-width: 768px) {
@@ -419,7 +424,7 @@ body {
     height: 100vh;
   }
   .intro .introH1 {
-    font-size: 8rem;
+    font-size: 10rem;
   }
   .mainSection {
     width: 100vw;
@@ -448,27 +453,26 @@ body {
     height: 100vh;
   }
   .projectSection .devTools {
-    height: 80%;
+    height: 100%;
   }
   .projectSection .devTools .mainTools,
   .projectSection .devTools .supTools {
     width: 50%;
-    height: 100%;
   }
   .projectSection .devTools .mainTools .svgPack,
   .projectSection .devTools .supTools .svgPack {
     flex-direction: column;
   }
+  .projectSection .devTools .mainTools .svgPack .toolsBundle,
+  .projectSection .devTools .supTools .svgPack .toolsBundle {
+    overflow: hidden;
+  }
   .projectTxt2 {
     width: 100vw;
-    height: 40%;
+    height: 40vh;
     padding: 2.5rem;
-    background: #5b78c7;
-    color: #fff;
   }
   .projectCardSection {
-    width: 100vw;
-    height: 100vh;
     display: none;
   }
   .projectCardSection .projectCards {
@@ -481,12 +485,12 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: #5b78c7;
   }
   .projectCardMobile .mobileCards {
     width: 100%;
     height: 100%;
     padding: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: #fff;
     margin-bottom: 10rem;
     border-radius: 3rem;
@@ -508,7 +512,6 @@ body {
   .projectCardMobile .mobileCards .mCardTxt h1 {
     font-size: 3rem;
     font-family: "Open Sans", sans-serif;
-    color: #5b78c7;
   }
   .projectCardMobile .mobileCards .mCardTxt p {
     font-size: 2rem;
@@ -526,9 +529,6 @@ body {
     width: 100vw;
     height: 50vh;
     flex-direction: column;
-  }
-  .footContainer .footBox1 h1 {
-    font-size: 4rem;
   }
   .footContainer .footBox2 {
     justify-content: space-between;
