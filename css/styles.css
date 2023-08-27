@@ -92,7 +92,7 @@
   list-style: none;
 }
 .headerSection .navSection ul .logo {
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 5rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -101,6 +101,11 @@
   margin-left: auto;
   padding: 5rem;
   z-index: 999;
+}
+.headerSection .navSection ul .navToggle .toggleSvgOpen {
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 .headerSection .navSection ul .navToggle .toggleSvgOpen,
 .headerSection .navSection ul .navToggle .toggleSvgClose {
@@ -119,7 +124,7 @@
 .intro {
   width: 100%;
   height: 100vh;
-  background: #151515;
+  background: #080f0f;
   z-index: 99;
   display: flex;
   justify-content: center;
@@ -226,6 +231,7 @@
   width: 50%;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -284,7 +290,6 @@
 .projectCards .left .detailsWrapper .cards h1 {
   font-size: 3rem;
   font-family: "Open Sans", sans-serif;
-  color: #151515;
 }
 .projectCards .left .detailsWrapper .cards p {
   font-size: 2.5rem;
@@ -356,7 +361,7 @@
   height: 40vh;
   display: flex;
   align-items: center;
-  background: #151515;
+  background: #080f0f;
 }
 .footContainer .footBox1 {
   width: 40%;
@@ -450,7 +455,7 @@
     font-size: 2.5rem;
   }
   .projectSection {
-    height: 100vh;
+    height: 80vh;
   }
   .projectSection .devTools {
     height: 100%;

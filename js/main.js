@@ -31,6 +31,7 @@ let introTl = gsap.timeline({
     delay: 0.1,
   },
 });
+
 introTl.fromTo(
   ".introH1",
   {
@@ -39,7 +40,7 @@ introTl.fromTo(
   {
     opacity: 1,
     duration: 1.5,
-    //delay: 0.5,
+    delay: 0.5,
     ease: "power3.in",
   }
 );
@@ -203,12 +204,12 @@ footerTl.fromTo(
 
     scrollTrigger: {
       trigger: ".contactContainer",
-      start: "top-=100 top",
-      end: "bottom center",
+      start: "top-=110 top",
+      end: "bottom-=50 center",
       ease: "power4.in",
       //animation: animateTools,
       scrub: true,
-      //markers: true
+      //markers: true,
     },
   }
 );

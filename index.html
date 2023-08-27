@@ -16,6 +16,8 @@
     />
 
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+
     <title>Adrian McCarthy</title>
   </head>
   <body>
@@ -71,7 +73,9 @@
           <li class="logo">A | M</li>
           <li class="navToggle">
             <!-- <a href="#"  id="toggleLink" aria-label="mobile toggle link"> -->
-            <svg
+            <p class="toggleSvgOpen">Menu</p>
+            <!--
+                 <svg
               class="toggleSvgOpen"
               width="20"
               height="24"
@@ -86,7 +90,8 @@
                   fill="black"
                 />
               </g>
-            </svg>
+            </svg
+              -->
 
             <svg
               class="toggleSvgClose"
@@ -635,5 +640,11 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
   </body>
 </html>
