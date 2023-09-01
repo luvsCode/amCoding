@@ -81,6 +81,7 @@ introTl.fromTo(
     ease: "power3.in",
   }
 );
+
 introTl.fromTo(
   ".headerSection",
   {
@@ -90,20 +91,53 @@ introTl.fromTo(
     opacity: 0,
     scrollTrigger: {
       trigger: ".mainSection",
-      start: "top+=80 top+=75",
-      end: "top+=160 top+=145",
+      start: "top+=110 top+=85",
+      end: "top+=200 top+=175",
       scrub: 1,
       //opacity: 0,
-      //markers: true
+      //markers: true,
     },
   },
   "<"
 );
+
 introTl.to(".webdevTxt", {
   color: "#5b78c7",
   ease: "sine",
   duration: 0.5,
 });
+
+introTl.fromTo(
+  ".mainBtn",
+  {
+    //display: "none",
+    opacity: 0,
+  },
+  {
+    delay: 1.2,
+    opacity: 0.8,
+    display: "block",
+    ease: "power3.in",
+  }
+);
+
+introTl.fromTo(
+  ".mainBtn",
+  {
+    opacity: 1,
+  },
+  {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".mainSection",
+      start: "top+=110 top+=85",
+      end: "top+=200 top+=175",
+      scrub: 1,
+      //opacity: 0,
+      //markers: true,
+    },
+  }
+);
 
 let aboutTl = gsap.timeline();
 
@@ -137,11 +171,11 @@ aboutTl.fromTo(
     opacity: 1,
     yPercent: 0,
     scrollTrigger: {
-      trigger: ".box1",
-      start: "top-=100 top",
+      trigger: ".aboutSection",
+      start: "top-=200 top-250",
       end: "bottom bottom",
       scrub: 1,
-      //markers: true
+      //markers: true,
     },
   }
 );
@@ -159,13 +193,13 @@ projectTl.fromTo(
     yPercent: 0,
 
     scrollTrigger: {
-      trigger: ".aboutH1",
-      start: "top+=30 top",
-      //end: 'bottom bottom',
-      ease: "power4.in",
+      trigger: ".aboutSection",
+      start: "center top",
+      end: "bottom+=100 center-=150",
+      ease: "none",
       //animation: animateTools,
       scrub: true,
-      //markers: true,
+      // markers: true,
     },
   }
 );
@@ -187,7 +221,7 @@ ScrollTrigger.create({
   animation: animation,
   scrub: true,
   //snap: 0.5,
-  //markers:true
+  //markers: true,
 });
 
 const footerTl = gsap.timeline();
