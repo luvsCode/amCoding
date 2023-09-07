@@ -16,128 +16,86 @@ window.addEventListener('mousemove', function(e) {
   });
  */
 
-window.addEventListener("mousemove", function (e) {
-  let mousePic = document.getElementById("circularcursor");
-  let x = e.pageX - 12;
-  let y = e.pageY - 12;
-  mousePic.style.left = x + "px";
-  mousePic.style.top = y + "px";
-  console.log(x, y);
-});
-
-let introTl = gsap.timeline({
-  defaults: {
-    duration: 1,
-    delay: 0.1,
-  },
-});
-
-introTl.fromTo(
-  ".introH1",
-  {
+let introTl = gsap
+  .timeline({
+    defaults: {
+      duration: 1,
+      delay: 0.1,
+    },
+  })
+  .fromTo(
+    ".introH1",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.in",
+    }
+  )
+  .to(".introH1", {
     opacity: 0,
-  },
-  {
-    opacity: 1,
-    duration: 1.5,
-    delay: 0.5,
-    ease: "power3.in",
-  }
-);
-introTl.to(".introH1", {
-  opacity: 0,
-  duration: 2.5,
-  delay: 1,
-  ease: "power3.out",
-});
-introTl.to(".intro", {
-  duration: 0.5,
-  opacity: 0,
-  ease: "power3.Out",
-  display: "none",
-});
-introTl.fromTo(
-  [".webdevTxt", ".mainP"],
-  {
+    duration: 2.5,
+    delay: 1,
+    ease: "power3.out",
+  })
+  .to(".intro", {
+    duration: 0.5,
     opacity: 0,
-  },
-  {
-    duration: 1.5,
-    opacity: 1,
-    //stagger: 1,
-    //delay: 0,
-    ease: "power4.in",
-  }
-);
-introTl.fromTo(
-  ".headerSection",
-  {
+    ease: "power3.Out",
     display: "none",
-    opacity: 0,
-  },
-  {
-    opacity: 1,
-    display: "block",
-    ease: "power3.in",
-  }
-);
-
-introTl.fromTo(
-  ".headerSection",
-  {
-    opacity: 1,
-  },
-  {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".mainSection",
-      start: "top+=110 top+=85",
-      end: "top+=200 top+=175",
-      scrub: 1,
-      //opacity: 0,
-      //markers: true,
+  })
+  .fromTo(
+    [".webdevTxt", ".mainP"],
+    {
+      opacity: 0,
     },
-  },
-  "<"
-);
-
-introTl.to(".webdevTxt", {
-  color: "#5b78c7",
-  ease: "sine",
-  duration: 0.5,
-});
-
-introTl.fromTo(
-  ".mainBtn",
-  {
-    //display: "none",
-    opacity: 0,
-  },
-  {
-    delay: 1.2,
-    opacity: 0.8,
-    display: "block",
-    ease: "power3.in",
-  }
-);
-
-introTl.fromTo(
-  ".mainBtn",
-  {
-    opacity: 1,
-  },
-  {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".mainSection",
-      start: "top+=110 top+=85",
-      end: "top+=200 top+=175",
-      scrub: 1,
-      //opacity: 0,
-      //markers: true,
+    {
+      duration: 1.5,
+      opacity: 1,
+      //stagger: 1,
+      //delay: 0,
+      ease: "power4.in",
+    }
+  )
+  .fromTo(
+    ".headerSection",
+    {
+      display: "none",
+      opacity: 0,
     },
-  }
-);
+    {
+      opacity: 1,
+      display: "block",
+      ease: "power3.in",
+    }
+  )
+  .fromTo(
+    ".headerSection",
+    {
+      opacity: 1,
+    },
+    {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".mainSection",
+        start: "top+=110 top+=85",
+        end: "top+=200 top+=175",
+        scrub: 1,
+        //opacity: 0,
+        //markers: true,
+      },
+    }
+  )
+  .to(".webdevTxt", {
+    color: "#5b78c7",
+    ease: "sine",
+    duration: 0.5,
+  });
+
+//let arrowTl = gsap.timeline()
 
 let aboutTl = gsap.timeline();
 
@@ -183,7 +141,7 @@ aboutTl.fromTo(
 let projectTl = gsap.timeline();
 
 projectTl.fromTo(
-  [".projectH1", ".svgPack"],
+  [".projectH1", ".projectP", ".svgPack"],
   {
     opacity: 0,
     yPercent: 50,

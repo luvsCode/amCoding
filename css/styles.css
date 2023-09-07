@@ -145,10 +145,18 @@
   height: 100vh;
   background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.mainSection .txtArea {
+.mainSection .txtContainer {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection .txtContainer .txtArea {
   background: #fff;
   width: 60%;
   height: 60%;
@@ -159,32 +167,25 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-.mainSection .txtArea .webdevTxt {
+.mainSection .txtContainer .txtArea .webdevTxt {
   font-size: 6rem;
-  font-weight: 600;
 }
-.mainSection .txtArea .mainP {
+.mainSection .txtContainer .txtArea .mainP {
   font-size: 5rem;
-  line-height: 1.2;
+  line-height: 1.5;
 }
-.mainSection .txtArea .mainBtn {
-  width: 15rem;
-  height: 5rem;
-  border: none;
-  border-left: 1px solid #5b78c7;
-  border-right: 1px solid #5b78c7;
-  border-radius: 2rem;
-  background: #fff;
-  font-size: 2rem;
-  font-family: "Poppins", sans-serif;
+.mainSection .arrowContainer {
+  display: none;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainSection .arrowContainer .arrow {
   margin: 5rem;
-  opacity: 0.5;
-}
-.mainSection .txtArea .mainBtn:hover {
-  color: #fff;
-  background: #5b78c7;
   opacity: 1;
-  cursor: pointer;
+  display: none;
 }
 
 .aboutSection {
@@ -213,7 +214,7 @@
   display: flex;
 }
 .aboutSection .box2 .aboutP {
-  text-align: left;
+  text-align: center;
   font-size: 2rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
@@ -231,6 +232,7 @@
   width: 50%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 8rem;
@@ -239,6 +241,13 @@
   font-size: 5rem;
   font-family: "Open Sans", sans-serif;
   text-align: center;
+  margin: 2rem;
+}
+.projectSection .projectTxt .projectP {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  line-height: 2;
 }
 .projectSection .devTools {
   width: 50%;
@@ -247,6 +256,12 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .projectSection .devTools .mainTools,
 .projectSection .devTools .supTools {
@@ -255,7 +270,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .projectSection .devTools .mainTools .svgPack,
@@ -293,7 +308,7 @@
 .projectTxt2 p {
   font-family: "Poppins", sans-serif;
   line-height: 2;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -322,7 +337,7 @@
   font-family: "Open Sans", sans-serif;
 }
 .projectCards .left .detailsWrapper .cards p {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
   margin-right: 5%;
@@ -330,11 +345,12 @@
 .projectCards .left .detailsWrapper .cards .cardBtns {
   width: 15rem;
   height: 5rem;
-  border: none;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-radius: 1rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
   margin-top: 2rem;
@@ -392,17 +408,17 @@
   text-align: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10rem;
+  padding: 8rem;
 }
 .contactContainer .txtBox h1 {
   font-family: "Open Sans", sans-serif;
-  font-size: 6rem;
-  font-weight: 600;
+  font-size: 5rem;
   margin-bottom: 0.8rem;
 }
 .contactContainer .txtBox p {
   font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  line-height: 2;
 }
 
 .footContainer {
@@ -411,7 +427,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #080f0f;
 }
 .footContainer .footBox1 {
   width: 100%;
@@ -421,25 +436,25 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  line-height: 1.5;
 }
 .footContainer .footBox1 h1 {
   font-family: "Open Sans", sans-serif;
-  color: #fff;
   font-size: 6rem;
   font-weight: 600;
 }
 .footContainer .footBox1 p {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
-  color: #fff;
-  padding: 2rem;
+  line-height: 2;
+  padding: 8rem;
 }
 .footContainer .footBox2 {
   width: 100%;
   height: 20%;
   display: flex;
   flex-direction: column;
+  background: #080f0f;
+  padding: 2rem;
 }
 .footContainer .footBox2 .socialLinks {
   width: 100%;
@@ -503,47 +518,47 @@
     width: 100vw;
     height: 100vh;
   }
-  .mainSection .txtArea {
-    width: 100%;
-    height: 100%;
-    padding: 3rem;
+  .mainSection .txtContainer .txtArea {
+    width: 80%;
   }
-  .mainSection .txtArea .webdevTxt {
+  .mainSection .txtContainer .txtArea .webdevTxt {
     font-size: 5rem;
   }
-  .mainSection .txtArea .mainP {
+  .mainSection .txtContainer .txtArea .mainP {
     font-size: 3rem;
-    line-height: 2;
   }
   .aboutSection .box1 .aboutH1 {
     text-align: center;
   }
   .aboutSection .box2 .aboutP {
-    padding: 3rem;
-    font-size: 2.5rem;
+    padding: 5rem;
   }
   .projectSection {
-    height: 80vh;
+    height: 120vh;
+    flex-direction: column;
+  }
+  .projectSection .projectTxt {
+    width: 100%;
+    height: 50%;
+    padding: 5rem;
   }
   .projectSection .devTools {
-    height: 100%;
+    height: 50%;
+    width: 100%;
   }
   .projectSection .devTools .mainTools,
   .projectSection .devTools .supTools {
-    width: 50%;
+    flex-direction: row;
   }
   .projectSection .devTools .mainTools .svgPack,
   .projectSection .devTools .supTools .svgPack {
-    flex-direction: column;
-  }
-  .projectSection .devTools .mainTools .svgPack .toolsBundle,
-  .projectSection .devTools .supTools .svgPack .toolsBundle {
-    overflow: hidden;
+    width: 70%;
+    flex-wrap: wrap;
   }
   .projectTxt2 {
     width: 100vw;
-    height: 40vh;
-    padding: 2.5rem;
+    height: 60vh;
+    padding: 5rem;
   }
   .projectCardSection {
     display: none;
@@ -613,15 +628,15 @@
     width: 100vw;
   }
   .contactContainer .txtBox {
-    width: 100%;
-    justify-content: space-evenly;
-    padding: 3rem;
+    padding: 5rem;
   }
-  .footContainer {
-    width: 100vw;
-    flex-direction: column;
+  .contactContainer .txtBox p {
+    margin-top: 3rem;
   }
-  .footContainer .footBox2 {
-    justify-content: space-between;
+  .footContainer .footBox1 h1 {
+    font-size: 5rem;
+  }
+  .footContainer .footBox1 p {
+    padding: 5rem;
   }
 }/*# sourceMappingURL=styles.css.map */
