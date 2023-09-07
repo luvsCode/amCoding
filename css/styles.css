@@ -143,6 +143,7 @@
 .mainSection {
   width: 100%;
   height: 100vh;
+  border: 2px solid blue;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -151,7 +152,7 @@
 }
 .mainSection .txtContainer {
   width: 100%;
-  height: 85%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,6 +299,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 8rem;
 }
 .projectTxt2 h1 {
@@ -309,7 +311,6 @@
   font-family: "Poppins", sans-serif;
   line-height: 2;
   font-size: 2rem;
-  text-align: center;
 }
 
 .projectCards {
@@ -529,6 +530,7 @@
   }
   .aboutSection .box1 .aboutH1 {
     text-align: center;
+    padding: 2rem;
   }
   .aboutSection .box2 .aboutP {
     padding: 5rem;
@@ -552,7 +554,7 @@
   }
   .projectSection .devTools .mainTools .svgPack,
   .projectSection .devTools .supTools .svgPack {
-    width: 70%;
+    width: 60%;
     flex-wrap: wrap;
   }
   .projectTxt2 {
