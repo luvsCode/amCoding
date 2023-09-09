@@ -95,8 +95,6 @@ let introTl = gsap
     duration: 0.5,
   });
 
-//let arrowTl = gsap.timeline()
-
 let aboutTl = gsap.timeline();
 
 aboutTl.fromTo(
