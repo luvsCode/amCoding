@@ -532,11 +532,9 @@
   .projectSection .devTools {
     height: 50%;
     width: 100%;
-    border: 2px solid green;
   }
   .projectSection .devTools .mainTools .svgPack,
   .projectSection .devTools .supTools .svgPack {
-    border: 1px solid red;
     width: 55%;
     height: 100%;
     justify-content: space-evenly;
@@ -547,7 +545,6 @@
   }
   .projectSection .devTools .mainTools .svgPack .toolsBundle,
   .projectSection .devTools .supTools .svgPack .toolsBundle {
-    border: 1px solid lightgreen;
     padding: 0.5rem;
   }
   .projectTxt2 {

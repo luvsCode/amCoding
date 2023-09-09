@@ -705,7 +705,7 @@
     .devTools {
       height: 50%;
       width: 100%;
-      border: 2px solid green;
+      //border: 2px solid green;
       //flex-direction: column;
       .mainTools,
       .supTools {
@@ -713,7 +713,7 @@
         //border: 1px solid blue;
         //flex-wrap: wrap;
         .svgPack {
-          border: 1px solid red;
+          //border: 1px solid red;
           width: 55%;
           height: 100%;
           justify-content: space-evenly;
@@ -724,7 +724,7 @@
           //flex-grow: 1;
 
           .toolsBundle {
-            border: 1px solid lightgreen;
+            //border: 1px solid lightgreen;
             //align-items: star;
             padding: 0.5rem;
           }
