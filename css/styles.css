@@ -521,7 +521,7 @@
     padding: 5rem;
   }
   .projectSection {
-    height: 140vh;
+    height: 120vh;
     flex-direction: column;
   }
   .projectSection .projectTxt {
@@ -541,10 +541,11 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   .projectSection .devTools .mainTools .svgPack .toolsBundle,
   .projectSection .devTools .supTools .svgPack .toolsBundle {
+    flex: 1;
     padding: 0.5rem;
   }
   .projectTxt2 {

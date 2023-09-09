@@ -692,7 +692,7 @@
   }
 
   .projectSection {
-    height: 140vh;
+    height: 120vh;
     flex-direction: column;
     //border: 2px solid green;
 
@@ -720,10 +720,11 @@
           align-items: center;
           flex-direction: row;
           flex-wrap: wrap;
-          gap: 2rem;
+          gap: 2.5rem;
           //flex-grow: 1;
 
           .toolsBundle {
+            flex: 1;
             //border: 1px solid lightgreen;
             //align-items: star;
             padding: 0.5rem;
