@@ -658,6 +658,7 @@
       .txtArea {
         //border: 1px solid green;
         width: 100%;
+        padding: 5rem;
 
         .webdevTxt {
           font-size: 5rem;
@@ -691,7 +692,7 @@
   }
 
   .projectSection {
-    height: 120vh;
+    height: 140vh;
     flex-direction: column;
     //border: 2px solid green;
 
@@ -708,14 +709,24 @@
       //flex-direction: column;
       .mainTools,
       .supTools {
-        flex-direction: row;
+        //flex-direction: row;
         //border: 1px solid blue;
         //flex-wrap: wrap;
         .svgPack {
           //border: 1px solid red;
-          width: 60%;
+          width: 50%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
           //flex-direction: column;
           flex-wrap: wrap;
+          //flex-grow: 1;
+
+          .toolsBundle {
+            //border: 1px solid lightgreen;
+            //align-items: star;
+            padding: 0.5rem;
+          }
         }
       }
     }

@@ -505,6 +505,7 @@
   }
   .mainSection .txtContainer .txtArea {
     width: 100%;
+    padding: 5rem;
   }
   .mainSection .txtContainer .txtArea .webdevTxt {
     font-size: 5rem;
@@ -520,7 +521,7 @@
     padding: 5rem;
   }
   .projectSection {
-    height: 120vh;
+    height: 140vh;
     flex-direction: column;
   }
   .projectSection .projectTxt {
@@ -532,14 +533,17 @@
     height: 50%;
     width: 100%;
   }
-  .projectSection .devTools .mainTools,
-  .projectSection .devTools .supTools {
-    flex-direction: row;
-  }
   .projectSection .devTools .mainTools .svgPack,
   .projectSection .devTools .supTools .svgPack {
-    width: 60%;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+  }
+  .projectSection .devTools .mainTools .svgPack .toolsBundle,
+  .projectSection .devTools .supTools .svgPack .toolsBundle {
+    padding: 0.5rem;
   }
   .projectTxt2 {
     width: 100vw;
