@@ -201,15 +201,16 @@
 
     .txtArea {
       background: #fff;
-      width: 60%;
-      height: 60%;
+      width: 70%;
+      height: 70%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       text-align: center;
       font-family: "Open Sans", sans-serif; //applies to anything in txtarea unless specified
-      //border: 1px solid red;
+      //sborder: 1px solid red;
+
       .webdevTxt {
         //if gsap scroll doesnt work then span outside of txtarea
         font-size: 6rem;
@@ -266,6 +267,32 @@
       padding: 8rem;
 
       //border: 2px solid red;
+    }
+  }
+
+  .toTopBtn {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    z-index: 99;
+    background: #080f0f;
+    border-radius: 5rem;
+    //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    border: 0.8px solid #5b78c7;
+    font-size: 4rem;
+    display: none;
+    color: #fff;
+
+    &:hover {
+      background: #5b78c7;
+    }
+
+    .toTopArrow {
+      margin-bottom: 0.6rem;
     }
   }
 }
@@ -386,98 +413,94 @@
   }
 }
 
-.projectCards {
-  display: flex;
-  //border: 2px solid green;
+.projectDesktop {
+  height: 100vh;
   width: 100%;
-  height: 100%;
+  //border: 1px solid blue;
+  display: flex;
 
-  .left {
+  .cardTxtContainer {
     width: 50%;
+    //border: red 2px solid;
+    height: 100vh;
+    //outline:1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem;
+    text-align: start;
 
-    .detailsWrapper {
-      margin: auto;
-      width: 80%;
-      //border: 1px solid orange;
-      .cards {
-        height: 100vh;
-        //outline:1px solid green;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
-        text-align: start;
+    h1 {
+      font-size: 3rem;
+      font-family: "Open Sans", sans-serif;
+      //color: #151515;
+    }
 
-        h1 {
-          font-size: 3rem;
-          font-family: "Open Sans", sans-serif;
-          //color: #151515;
-        }
+    p {
+      font-size: 2rem;
+      line-height: 2;
+      font-family: "Poppins", sans-serif;
+      margin-right: 5%;
+    }
 
-        p {
-          font-size: 2rem;
-          line-height: 2;
-          font-family: "Poppins", sans-serif;
-          margin-right: 5%;
-        }
+    .cardBtns {
+      width: 10rem;
+      height: 4rem;
+      background: #080f0f;
+      color: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 1.5rem;
+      font-family: "Poppins", sans-serif;
+      margin-top: 2rem;
 
-        .cardBtns {
-          width: 10rem;
-          height: 4rem;
-          background: #080f0f;
-          color: #fff;
-          border-radius: 1rem;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(5px);
-          -webkit-backdrop-filter: blur(5px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          font-size: 1.5rem;
-          font-family: "Poppins", sans-serif;
-          margin-top: 2rem;
-
-          &:hover {
-            //color: #fff;
-            background: #5b78c7;
-            //opacity: 1;
-            cursor: pointer;
-          }
-        }
+      &:hover {
+        //color: #fff;
+        background: #5b78c7;
+        //opacity: 1;
+        cursor: pointer;
       }
     }
   }
 
-  .right {
-    //outline: 1px solid purple;
+  .cardImgContainer {
+    //border: 2px solid violet;
     width: 50%;
-    height: 100vh;
+    background: rgba(255, 255, 255, 0.41);
+    //border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
-    .photos {
-      width: 40vw;
-      height: 40vw;
-      //background: #5b78c7;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 1rem;
-      z-index: 20;
+    .photo {
+      width: 80%;
+      height: 80%;
+      //border: 1px solid red;
 
-      .photo {
-        position: absolute;
-        width: 98%;
-        height: 98%;
-        //border-radius: 1rem;
-
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 1rem;
-        }
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
+  }
+
+  .topSection {
+    //border: 1px solid red;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+
+  .bottomSection {
+    //border: 1px solid red;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
   }
 }
 
@@ -660,10 +683,15 @@
         width: 100%;
         padding: 5rem;
 
+        .picContainer {
+          //border: 1px solid pink;
+          padding: 2rem;
+        }
+
         .webdevTxt {
-          font-size: 5rem;
+          font-size: 3rem;
           //text-align: center;
-          //font-weight: 600;
+          font-weight: 600;
         }
 
         .mainP {
@@ -677,6 +705,10 @@
   .aboutSection {
     //border: 1px solid red;
     .box1 {
+      .profilePic {
+        width: 250px;
+        width: 250px;
+      }
       .aboutH1 {
         text-align: center;
         padding: 2rem;
@@ -692,7 +724,7 @@
   }
 
   .projectSection {
-    height: 120vh;
+    height: 140vh;
     flex-direction: column;
     //border: 2px solid green;
 
@@ -743,12 +775,8 @@
     //border: 2px solid purple;
   }
 
-  .projectCardSection {
+  .projectDesktop {
     display: none;
-
-    .projectCards {
-      display: none;
-    }
   }
 
   .projectCardMobile {

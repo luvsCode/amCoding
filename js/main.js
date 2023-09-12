@@ -1,21 +1,3 @@
-/**
- * function mousePos(e)
-{
-let x = e.clientX;
-  let y = e.clientY;
-  //mousePic.style.left = x;
-  //mousePic.style.top = y;
-  console.log(x,y);
-}
-
-//let mousePic = document.getElementById('circularcursor')
-
-window.addEventListener('mousemove', function(e) {
-    
-    mousePos(e);
-  });
- */
-
 let introTl = gsap
   .timeline({
     defaults: {
@@ -48,6 +30,19 @@ let introTl = gsap
     display: "none",
   })
   .fromTo(
+    ".mainPic",
+    {
+      opacity: 0,
+    },
+    {
+      duration: 1.5,
+      opacity: 1,
+      //stagger: 1,
+      //delay: 0,
+      ease: "power4.in",
+    }
+  )
+  .fromTo(
     [".webdevTxt", ".mainP"],
     {
       opacity: 0,
@@ -60,6 +55,11 @@ let introTl = gsap
       ease: "power4.in",
     }
   )
+  .to(".webdevTxt", {
+    color: "#5b78c7",
+    ease: "power4.in",
+    duration: 1,
+  })
   .fromTo(
     ".headerSection",
     {
@@ -88,97 +88,71 @@ let introTl = gsap
         //markers: true,
       },
     }
-  )
-  .to(".webdevTxt", {
-    color: "#5b78c7",
-    ease: "sine",
-    duration: 0.5,
-  });
+  );
 
 let aboutTl = gsap.timeline();
 
-aboutTl.fromTo(
-  [".profilePic", ".aboutH1"],
-  {
-    opacity: 0,
-    yPercent: +100,
-  },
-  {
-    opacity: 1,
-    yPercent: 0,
-    //zIndex: 1,
-    scrollTrigger: {
-      trigger: ".txtArea",
-      start: "top top",
-      //end: 'bottom bottom',
-      scrub: 1,
-      //snap: 1
-      //markers: true,
+aboutTl
+  .fromTo(
+    [".profilePic", ".aboutH1"],
+    {
+      opacity: 0,
+      yPercent: +100,
     },
-  }
-);
-aboutTl.fromTo(
-  ".aboutP",
-  {
-    opacity: 0,
-    //yPercent: 50
-  },
-  {
-    opacity: 1,
-    yPercent: 0,
-    scrollTrigger: {
-      trigger: ".aboutSection",
-      start: "top-=200 top-250",
-      end: "bottom bottom",
-      scrub: 1,
-      //markers: true,
+    {
+      opacity: 1,
+      yPercent: 0,
+      //zIndex: 1,
+      scrollTrigger: {
+        trigger: ".txtArea",
+        start: "top top",
+        //end: 'bottom bottom',
+        scrub: 1,
+        //snap: 1
+        //markers: true,
+      },
+    }
+  )
+  .fromTo(
+    ".aboutP",
+    {
+      opacity: 0,
+      //yPercent: 50
     },
-  }
-);
-
-let projectTl = gsap.timeline();
-
-projectTl.fromTo(
-  [".projectH1", ".projectP", ".svgPack"],
-  {
-    opacity: 0,
-    yPercent: 50,
-  },
-  {
-    opacity: 1,
-    yPercent: 0,
-
-    scrollTrigger: {
-      trigger: ".aboutSection",
-      start: "center top",
-      end: "bottom+=100 center-=150",
-      ease: "none",
-      //animation: animateTools,
-      scrub: true,
-      // markers: true,
+    {
+      opacity: 1,
+      yPercent: 0,
+      scrollTrigger: {
+        trigger: ".aboutSection",
+        start: "top-=200 top-250",
+        end: "bottom bottom",
+        scrub: 1,
+        //markers: true,
+      },
+    }
+  )
+  .fromTo(
+    ".toTopBtn",
+    {
+      display: "none",
+      opacity: 0,
     },
-  }
-);
+    {
+      display: "block",
+      duration: 0.8,
+      opacity: 1,
 
-gsap.set(".photo:not(:first-child)", { opacity: 0, xPercent: +100 });
-
-const animation = gsap.to(".photo:not(:first-child)", {
-  opacity: 1,
-  xPercent: 0,
-  duration: 1,
-  stagger: 1.5,
-});
-
-ScrollTrigger.create({
-  trigger: ".projectCards",
-  start: "top top",
-  end: "bottom bottom",
-  pin: ".right",
-  animation: animation,
-  scrub: true,
-  //snap: 0.5,
-  //markers: true,
-});
+      scrollTrigger: {
+        trigger: ".aboutSection",
+        start: "top-=250 top",
+        //end: "bottom bottom",
+        scrub: 1,
+        ease: "power3.Out",
+        //pin: true,
+        //markers: true,
+      },
+    }
+  );
 
 const footerTl = gsap.timeline();
 
@@ -212,6 +186,7 @@ const landingLink = document.querySelector(".landingLink");
 const aboutLink = document.querySelector(".aboutLink");
 const projectLink = document.querySelector(".projectLink");
 const contactLink = document.querySelector(".contactLink");
+const toTopBtn = document.querySelector(".toTopBtn");
 
 toggleButton.addEventListener("click", () => {
   toggleButton.classList.toggle("svgOpen");
@@ -252,3 +227,23 @@ contactLink.addEventListener("click", () => {
   toggleButton.classList.remove("svgOpen");
   toggleClose.classList.remove("closeSvg");
 });
+
+toTopBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
+
+/**
+ * 
+ * window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+ */

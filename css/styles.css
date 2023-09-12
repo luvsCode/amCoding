@@ -158,8 +158,8 @@
 }
 .mainSection .txtContainer .txtArea {
   background: #fff;
-  width: 60%;
-  height: 60%;
+  width: 70%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,6 +206,27 @@
   line-height: 2;
   font-family: "Poppins", sans-serif;
   padding: 8rem;
+}
+.aboutSection .toTopBtn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  background: #080f0f;
+  border-radius: 5rem;
+  border: 0.8px solid #5b78c7;
+  font-size: 4rem;
+  display: none;
+  color: #fff;
+}
+.aboutSection .toTopBtn:hover {
+  background: #5b78c7;
+}
+.aboutSection .toTopBtn .toTopArrow {
+  margin-bottom: 0.6rem;
 }
 
 .projectSection {
@@ -299,37 +320,31 @@
   font-size: 2rem;
 }
 
-.projectCards {
-  display: flex;
+.projectDesktop {
+  height: 100vh;
   width: 100%;
-  height: 100%;
+  display: flex;
 }
-.projectCards .left {
+.projectDesktop .cardTxtContainer {
   width: 50%;
-}
-.projectCards .left .detailsWrapper {
-  margin: auto;
-  width: 80%;
-}
-.projectCards .left .detailsWrapper .cards {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 8rem;
   text-align: start;
 }
-.projectCards .left .detailsWrapper .cards h1 {
+.projectDesktop .cardTxtContainer h1 {
   font-size: 3rem;
   font-family: "Open Sans", sans-serif;
 }
-.projectCards .left .detailsWrapper .cards p {
+.projectDesktop .cardTxtContainer p {
   font-size: 2rem;
   line-height: 2;
   font-family: "Poppins", sans-serif;
   margin-right: 5%;
 }
-.projectCards .left .detailsWrapper .cards .cardBtns {
+.projectDesktop .cardTxtContainer .cardBtns {
   width: 10rem;
   height: 4rem;
   background: #080f0f;
@@ -343,36 +358,36 @@
   font-family: "Poppins", sans-serif;
   margin-top: 2rem;
 }
-.projectCards .left .detailsWrapper .cards .cardBtns:hover {
+.projectDesktop .cardTxtContainer .cardBtns:hover {
   background: #5b78c7;
   cursor: pointer;
 }
-.projectCards .right {
+.projectDesktop .cardImgContainer {
   width: 50%;
-  height: 100vh;
+  background: rgba(255, 255, 255, 0.41);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-}
-.projectCards .right .photos {
-  width: 40vw;
-  height: 40vw;
-  position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  z-index: 20;
 }
-.projectCards .right .photos .photo {
-  position: absolute;
-  width: 98%;
-  height: 98%;
+.projectDesktop .cardImgContainer .photo {
+  width: 80%;
+  height: 80%;
 }
-.projectCards .right .photos .photo img {
+.projectDesktop .cardImgContainer .photo img {
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+}
+.projectDesktop .topSection {
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+.projectDesktop .bottomSection {
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 
 .projectCardMobile {
@@ -507,11 +522,19 @@
     width: 100%;
     padding: 5rem;
   }
+  .mainSection .txtContainer .txtArea .picContainer {
+    padding: 2rem;
+  }
   .mainSection .txtContainer .txtArea .webdevTxt {
-    font-size: 5rem;
+    font-size: 3rem;
+    font-weight: 600;
   }
   .mainSection .txtContainer .txtArea .mainP {
     font-size: 3rem;
+  }
+  .aboutSection .box1 .profilePic {
+    width: 250px;
+    width: 250px;
   }
   .aboutSection .box1 .aboutH1 {
     text-align: center;
@@ -521,7 +544,7 @@
     padding: 5rem;
   }
   .projectSection {
-    height: 120vh;
+    height: 140vh;
     flex-direction: column;
   }
   .projectSection .projectTxt {
@@ -553,10 +576,7 @@
     height: 60vh;
     padding: 5rem;
   }
-  .projectCardSection {
-    display: none;
-  }
-  .projectCardSection .projectCards {
+  .projectDesktop {
     display: none;
   }
   .projectCardMobile {
