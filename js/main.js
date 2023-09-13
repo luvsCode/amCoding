@@ -37,8 +37,6 @@ let introTl = gsap
     {
       duration: 1.5,
       opacity: 1,
-      //stagger: 1,
-      //delay: 0,
       ease: "power4.in",
     }
   )
@@ -50,8 +48,6 @@ let introTl = gsap
     {
       duration: 1.5,
       opacity: 1,
-      //stagger: 1,
-      //delay: 0,
       ease: "power4.in",
     }
   )
@@ -84,8 +80,6 @@ let introTl = gsap
         start: "top+=110 top+=85",
         end: "top+=200 top+=175",
         scrub: 1,
-        //opacity: 0,
-        //markers: true,
       },
     }
   );
@@ -102,13 +96,10 @@ aboutTl
     {
       opacity: 1,
       yPercent: 0,
-      //zIndex: 1,
       scrollTrigger: {
         trigger: ".txtArea",
         start: "top top",
-        //end: 'bottom bottom',
         scrub: 1,
-        //snap: 1
         //markers: true,
       },
     }
@@ -117,7 +108,6 @@ aboutTl
     ".aboutP",
     {
       opacity: 0,
-      //yPercent: 50
     },
     {
       opacity: 1,
@@ -145,10 +135,8 @@ aboutTl
       scrollTrigger: {
         trigger: ".aboutSection",
         start: "top-=250 top",
-        //end: "bottom bottom",
         scrub: 1,
         ease: "power3.Out",
-        //pin: true,
         //markers: true,
       },
     }
@@ -171,7 +159,6 @@ footerTl.fromTo(
       start: "top-=110 top",
       end: "bottom-=50 center",
       ease: "power4.in",
-      //animation: animateTools,
       scrub: true,
       //markers: true,
     },
@@ -232,18 +219,3 @@ toTopBtn.addEventListener("click", () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
-
-/**
- * 
- * window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
- */

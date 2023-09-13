@@ -10,21 +10,6 @@
   display: none;
 }
 
-#circularcursor {
-  background: #04773b;
-  border: 1px solid black;
-  height: 30px;
-  width: 30px;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-}
-
 .headerSection {
   width: 100%;
   height: 15vh;
@@ -498,9 +483,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  #circularcursor {
-    display: none;
-  }
   .headerSection {
     width: 100vw;
   }
