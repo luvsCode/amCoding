@@ -24,3 +24,23 @@ body {
   flex-wrap: wrap;
   gap: 2vmin;
 }
+
+.btnOptn {
+  background: #fff;
+  height: 22vmin;
+  width: 22vmin;
+  border: none;
+  border-radius: 8px;
+}
+
+#restart {
+  font-size: 1.3em;
+  padding: 1em;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  position: relative;
+  margin: 1.5em auto 0 auto;
+  display: block;
+}
