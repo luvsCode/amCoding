@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="container">
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-        <button class="btnOptn"></button>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+<!--          -- GOOGLE FONTS --          -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap"
+  rel="stylesheet"
+/>
+<!--          -- STYLE SHEET --          -->    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="wrapper">
+        
+       <div class="container">
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+           <button class="btns"></button>
+       </div>
+       <button id="restart">Restart</button>
+   </div>
+
+   <div class="popup hide">
+       <p id="message">Sample Message</p>
+       <button id="newGame">New Game</button>
+   </div>
+   
+<!--          -- SCRIPTING FILES --          -->
+    <script src="app.js"></script>
+</body>
 </html>
