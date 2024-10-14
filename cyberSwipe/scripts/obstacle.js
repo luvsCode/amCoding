@@ -59,7 +59,7 @@ class Obstacle{
     }
     isOffScreen()
     {
-        return this.x < -this.scaledWidth;
+        return this.x < -this.scaledWidth || this.y > this.game.height;
     }
 }
 

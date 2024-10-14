@@ -18,12 +18,17 @@ class Player {
         this.minEnergy = 15;
         this.charging;
         this.barSize;
+        this.image = document.getElementById('playerFish');
     }
     draw(){
-        this.game.ctx.strokeRect(this.x, this.y, this.width, this.height);
-        this.game.ctx.beginPath()
-        this.game.ctx.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2)
-        this.game.ctx.stroke();
+        
+        this.game.ctx.drawImage(this.image, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        if(this.game.debug)
+        {
+            this.game.ctx.beginPath()
+            this.game.ctx.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2)
+            this.game.ctx.stroke();
+        }
     }
     update(){
         this.handleEngery();
@@ -79,7 +84,7 @@ class Player {
                 }
                 if(this.charging)
                 {
-                    this.energy -= 4;
+                    this.energy -= 5;
                     if(this.energy <= 0)
                         {
                             this.energy = 0;
