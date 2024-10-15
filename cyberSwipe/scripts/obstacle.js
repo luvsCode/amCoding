@@ -13,6 +13,7 @@ class Obstacle{
         this.collisionRadius = this.scaledWidth * 0.5;
         this.speedY = Math.random() < 0.5 ? -1 * this.game.ratio : 1 * this.game.ratio;
         this.markedForDeletion = false;
+        this.image = document.getElementById('smallGears');
     }
     update()
     {
