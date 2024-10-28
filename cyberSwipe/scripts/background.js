@@ -3,6 +3,7 @@ class Background{
     {
         this.game = game;
         this.image = document.getElementById('background');
+        this.image2 = document.getElementById('background2');
         this.width = 2400;
         this.height = this.game.baseHeight;
         this.scaledWidth;
