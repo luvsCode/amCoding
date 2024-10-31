@@ -3,8 +3,8 @@ class Player {
         this.game = game;
         this.x = 20;
         this.y;
-        this.spriteWidth = 200;
-        this.spriteHeight = 200;
+        this.spriteWidth = 34;
+        this.spriteHeight = 34;
         this.width;
         this.height;
         this.speedY;
@@ -20,10 +20,11 @@ class Player {
         this.barSize;
         this.image = document.getElementById('playerFish');
         this.frameY;
+        this.frameX;
     }
     draw(){
         
-        this.game.ctx.drawImage(this.image, 0, this.frameY * this.spriteHeight, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        this.game.ctx.drawImage(this.image,  this.frameX * this.spriteWidth, this.frameY * this.spriteHeight, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
         if(this.game.debug)
         {
             this.game.ctx.beginPath()
@@ -37,7 +38,7 @@ class Player {
         if(this.speedY >= 0) this.wingsUp();
         this.y += this.speedY;
         this.collisionY = this.y + this.height * 0.5;
-        if (!this.isTouchingBottom()){
+        if (!this.isTouchingBottom() && !this.charging){
             this.speedY += this.game.gravity;
         }
         else{
@@ -50,17 +51,18 @@ class Player {
         }
     }
     resize(){
-        this.width = this.spriteWidth * this.game.ratio;
-        this.height = this.spriteHeight * this.game.ratio;
+        this.width = this.spriteWidth * this.game.ratio * 5;
+        this.height = this.spriteHeight * this.game.ratio * 5;
         this.y = this.game.height * 0.5 - this.height * 0.5;
         this.speedY = -8 * this.game.ratio;
         this.flapSpeed = 5 * this.game.ratio;
         this.collisionRadius = 40 * this.game.ratio;
-        this.collisionX = this.x + this.width * 0.7;
+        this.collisionX = this.x + this.width * 0.5;
         this.collided = false;
         this.barSize = Math.floor(3 * this.game.ratio)
         this. energy = 30;
         this.frameY = 0;
+        this.frameX = 0;
         this.charging = false;
 
     }
@@ -78,7 +80,7 @@ class Player {
     }
     wingsIdle()
     {
-        if(!this.charging) this.frameY = 0;
+        if(!this.charging) this.frameY = 0;       
     }
     wingsDown()
     {
@@ -90,7 +92,8 @@ class Player {
     }
     wingsCharge()
     {
-        this.frameY = 3;
+        this.frameY = 1;
+        this.frameX = 1;
     }
     isTouchingTop()
     {

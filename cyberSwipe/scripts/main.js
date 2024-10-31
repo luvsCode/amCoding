@@ -9,7 +9,7 @@ class Game {
         this.background = new Background(this);
         this.player = new Player(this);
         this.obstacles = [];
-        this.numberOfObstacles = 20;
+        this.numberOfObstacles = 10;
         this.gravity;
         this.speed;
         this.maxSpeed;
@@ -89,14 +89,14 @@ class Game {
         this.height = this.canvas.height;
         this.ratio = this.height / this.baseHeight;
 
-        this.bottomMargin = Math.floor(50 * this.ratio);
+        this.bottomMargin = Math.floor(10 * this.ratio);
         this.smallFont = Math.ceil(20 * this.ratio);
-        this.largeFont = Math.ceil(45 * this.ratio);
+        this.largeFont = Math.ceil(55 * this.ratio);
         this.ctx.font = this.smallFont + 'px Bungee';
         this.gravity = 0.15 * this.ratio;
-        this.speed = 2 * this.ratio;
+        this.speed = 1.5 * this.ratio;
         this.minSpeed = this.speed;
-        this.maxSpeed = this.speed * 5;
+        this.maxSpeed = this.speed * 4;
         this.background.resize();
         this.player.resize();
         this.createObstacles();
@@ -193,6 +193,7 @@ class Game {
     drawStatusText()
     {
         this.ctx.save();
+        this.ctx.fillStyle = '#FCEADE';
         this.ctx.fillText('Score: ' + this.score, this.width - this.smallFont, this.largeFont);
         this.ctx.textAlign = 'left';
         this.ctx.fillText('Timer: ' + this.formatTimer(), this.smallFont, this.largeFont);
@@ -207,11 +208,12 @@ class Game {
             this.ctx.fillText("Press 'R' to try again!", this.width * 0.5, this.height * 0.5, this.width)
         }
 
+        this.ctx.fillStyle = 'green';
         if(this.player.energy <= this.player.minEnergy) this.ctx.fillStyle = 'red';
-        else if (this.player.energy >= this.player.maxEnergy) this.ctx.fillStyle = 'green';
+        //else if (this.player.energy >= this.player.maxEnergy) this.ctx.fillStyle = 'green';
         for(let i = 0; i < this.player.energy; i++)
         {
-            this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i, this.player.barSize * 5, this.player.barSize);
+            this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i, this.player.barSize * 2, this.player.barSize);
         }
         this.ctx.restore();
     }
