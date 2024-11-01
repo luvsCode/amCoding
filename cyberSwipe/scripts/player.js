@@ -62,7 +62,7 @@ class Player {
         this.barSize = Math.floor(3 * this.game.ratio)
         this. energy = 30;
         this.frameY = 0;
-        this.frameX = 0;
+        this.frameX = 3;
         this.charging = false;
 
     }
@@ -80,20 +80,33 @@ class Player {
     }
     wingsIdle()
     {
-        if(!this.charging) this.frameY = 0;       
+        if(!this.charging)
+            {
+                this.frameY = 0;
+                this.frameX = 3;
+            }       
     }
     wingsDown()
     {
-        if(!this.charging) this.frameY = 1;
+        if(!this.charging)
+        {
+            this.frameY = 2;
+            this.frameX = 2;
+        }
     }
     wingsUp()
     {
-        if(!this.charging) this.frameY = 2;
+        if(!this.charging)
+        {
+            this.frameY = 1;
+            this.frameX = 6;    
+        }
     }
+
     wingsCharge()
     {
-        this.frameY = 1;
-        this.frameX = 1;
+        this.frameY = 0;
+        this.frameX = 5;
     }
     isTouchingTop()
     {

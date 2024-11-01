@@ -135,7 +135,7 @@ class Game {
     {
         this.obstacles = []
         const firstX = this.baseHeight * this.ratio;
-        const obstacleSpacing = 600 * this.ratio;
+        const obstacleSpacing = 500 * this.ratio;
         for(let i = 0; i < this.numberOfObstacles; i++)
         {
             this.obstacles.push(new Obstacle(this, firstX + i * obstacleSpacing))
@@ -179,14 +179,14 @@ class Game {
             if(this.obstacles.length <= 0)
             {
                 //this.sound.play(this.sound.win);
-                this.message1 = 'Nailed it!';
-                this.message2 = 'Can you do it faster than ' + this.formatTimer() + 'seconds?'
+                this.message1 = 'SUCCESS!';
+                this.message2 = 'Your time is ' + this.formatTimer() + 'seconds.'
             }
             else
             {
                 //this.sound.play(this.sound.lose);
-                this.message1 = 'Getting Rusty?';
-                this.message2 = 'Collision time ' + this.formatTimer() + 'seconds!';
+                this.message1 = 'Maybe next time!';
+                this.message2 = 'Collision time ' + this.formatTimer() + ' seconds!';
             }
         }
     }
@@ -205,7 +205,7 @@ class Game {
             this.ctx.fillText(this.message1, this.width * 0.5, this.height * 0.5 - this.largeFont, this.width)
             this.ctx.font = this.smallFont + 'px Bungee';
             this.ctx.fillText(this.message2, this.width * 0.5, this.height * 0.5 - this.smallFont, this.width)
-            this.ctx.fillText("Press 'R' to try again!", this.width * 0.5, this.height * 0.5, this.width)
+            //this.ctx.fillText("Press 'R' to try again!", this.width * 0.5, this.height * 0.5, this.width)
         }
 
         this.ctx.fillStyle = 'green';
