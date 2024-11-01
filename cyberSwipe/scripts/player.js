@@ -3,8 +3,8 @@ class Player {
         this.game = game;
         this.x = 20;
         this.y;
-        this.spriteWidth = 34;
-        this.spriteHeight = 34;
+        this.spriteWidth = 500;
+        this.spriteHeight = 500;
         this.width;
         this.height;
         this.speedY;
@@ -51,8 +51,8 @@ class Player {
         }
     }
     resize(){
-        this.width = this.spriteWidth * this.game.ratio * 5;
-        this.height = this.spriteHeight * this.game.ratio * 5;
+        this.width = this.spriteWidth * this.game.ratio /3;
+        this.height = this.spriteHeight * this.game.ratio /3;
         this.y = this.game.height * 0.5 - this.height * 0.5;
         this.speedY = -8 * this.game.ratio;
         this.flapSpeed = 5 * this.game.ratio;

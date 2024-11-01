@@ -213,7 +213,7 @@ class Game {
         //else if (this.player.energy >= this.player.maxEnergy) this.ctx.fillStyle = 'green';
         for(let i = 0; i < this.player.energy; i++)
         {
-            this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i, this.player.barSize * 2, this.player.barSize);
+            this.ctx.fillRect(10, this.height - 10 - this.player.barSize * i, this.player.barSize * 3, this.player.barSize);
         }
         this.ctx.restore();
     }

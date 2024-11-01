@@ -3,7 +3,7 @@ class Obstacle{
     {
         this.game = game;
         this.spriteWidth = 200;
-        this.spriteHeight = 200;
+        this.spriteHeight = 250;
         this.scaledWidth = this.spriteWidth * this.game.ratio;
         this.scaledHeight = this.spriteHeight * this.game.ratio;
         this.x = x;
@@ -11,7 +11,7 @@ class Obstacle{
         this.collisionX;
         this.collisionY;
         this.collisionRadius;
-        this.speedY = Math.random() < 0.5 ? -1 * this.game.ratio: 1 * this.game.ratio;
+        this.speedY = Math.random() < 1 ? -1 * this.game.ratio: 1 * this.game.ratio;
         this.markedForDeletion = false;
         this.image = document.getElementById('smallGears');
         //this.frameX = Math.floor(Math.random() * 4);
@@ -30,7 +30,7 @@ class Obstacle{
                 }
                 else
                 {
-                    this.speedY += 1;
+                    this.speedY += 0.1;
                 }
         }
         if(this.isOffScreen())
@@ -62,8 +62,8 @@ class Obstacle{
     }
     resize()
     {
-        this.scaledWidth = this.spriteWidth * this.game.ratio / 2;
-        this.scaledHeight = this.spriteHeight * this.game.ratio / 2;
+        this.scaledWidth = this.spriteWidth * this.game.ratio /3;
+        this.scaledHeight = this.spriteHeight * this.game.ratio /3;
         this.collisionRadius = this.scaledWidth * 0.3;
     }
     isOffScreen()
